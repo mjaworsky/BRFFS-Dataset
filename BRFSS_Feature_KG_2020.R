@@ -356,246 +356,286 @@ WHO_words <- WHO_words %>%
 WHO_words
 
 
-Q1 <- tolower(c('Is','this','PHONE','NUMBER'))
-Q2 <- tolower(c('Is','this','a','private','residence'))
-Q3 <- tolower(c('Do','you','live','in','college','housing'))
-Q4 <- tolower(c('Do','you','currently','live','instate'))
-Q5 <- tolower(c('Is','this','a','cell','phone'))
-Q6 <- tolower(c('Are','you','18','years','of','age','or','older'))
-Q7 <- tolower(c('Are','you','male','or','female'))
-Q8 <- tolower(c('I','need','to','randomly','select','one','adult','who','lives','in','your','household','to','be','interviewed','Excluding','adults','living','away','from','home','such','as','students','away','at','college','how','many','members','of','your','household','including','yourself','are','18','years','of','age','or','older'))
-Q9 <- tolower(c('Are','you','male','or','female'))
-Q10 <- tolower(c('How','many','of','these','adults','are','men'))
-Q11 <- tolower(c('So','the','number','of','women','in','the','household','is','','Is','that','correct'))
-Q12 <- tolower(c('The','person','in','your','household','that','I','need','to','speak','with','is','OldestYoungest','MiddleMale','Female','Are','you','the','OldestYoungest','MiddleMale','Female','in','this','household'))
-Q13 <- tolower(c('Is','this','a','safe','time','to','talk','with','you'))
-Q14 <- tolower(c('Is','this','PHONE','NUMBER'))
-Q15 <- tolower(c('Is','this','a','cell','phone'))
-Q16 <- tolower(c('Are','you','18','years','of','age','or','older'))
-Q17 <- tolower(c('Are','you','male','or','female'))
-Q18 <- tolower(c('Do','you','live','in','a','private','residence'))
-Q19 <- tolower(c('Do','you','live','in','college','housing'))
-Q20 <- tolower(c('Do','you','currently','live','instate'))
-Q21 <- tolower(c('In','what','state','do','you','currently','live'))
-Q22 <- tolower(c('Do','you','also','have','a','landline','telephone','in','your','home','that','is','used','to','make','and','receive','calls'))
-Q23 <- tolower(c('How','many','members','of','your','household','including','yourself','are','18','years','of','age','or','older'))
-Q24 <- tolower(c('Would','you','say','that','in','general','your','health','is'))
-Q25 <- tolower(c('Now','thinking','about','your','physical','health','which','includes','physical','illness','and','injury','for','how','many','days','during','the','past','30','days','was','your','physical','health','not','good'))
-Q26 <- tolower(c('Now','thinking','about','your','mental','health','which','includes','stress','depression','and','problems','with','emotions','for','how','many','days','during','the','past','30','days','was','your','mental','health','not','good'))
-Q27 <- tolower(c('During','the','past','30','days','for','about','how','many','days','did','poor','physical','or','mental','health','keep','you','from','doing','your','usual','activities','such','as','selfcare','work','or','recreation'))
-Q28 <- tolower(c('Do','you','have','any','kind','of','health','care','coverage','including','health','insurance','prepaid','plans','such','as','HMOs','or','government','plans','such','as','Medicare','or','Indian','Health','Service'))
-Q29 <- tolower(c('Do','you','have','one','person','you','think','of','as','your','personal','doctor','or','health','care','provider'))
-Q30 <- tolower(c('Was','there','a','time','in','the','past','12','months','when','you','needed','to','see','a','doctor','but','could','not','because','of','cost'))
-Q31 <- tolower(c('About','how','long','has','it','been','since','you','last','visited','a','doctor','for','a','routine','checkup'))
-Q32 <- tolower(c('Have','you','ever','been','told','by','a','doctor','nurse','or','other','health','professional','that','you','have','high','blood','pressure'))
-Q33 <- tolower(c('Are','you','currently','taking','prescription','medicine','for','your','high','blood','pressure'))
-Q34 <- tolower(c('Blood','cholesterol','is','a','fatty','substance','found','in','the','blood','About','how','long','has','it','been','since','you','last','had','your','blood','cholesterol','checked'))
-Q35 <- tolower(c('Have','you','ever','been','told','by','a','doctor','nurse','or','other','health','professional','that','your','blood','cholesterol','is','high'))
-Q36 <- tolower(c('Are','you','currently','taking','medicine','prescribed','by','your','doctor','or','other','health','professional','for','your','blood','cholesterol'))
-Q37 <- tolower(c('Has','a','doctor','nurse','or','other','health','professional','ever','told','you','that','you','had','any','of','the','following','For','each','tell','me','Yes','No','Or','You’re','Not','Sure','Ever','told','you','that','you','had','a','heart','attack','also','called','a','myocardial','infarction'))
-Q38 <- tolower(c('Ever','told','you','had','angina','or','coronary','heart','disease'))
-Q39 <- tolower(c('Ever','told','you','had','a','stroke'))
-Q40 <- tolower(c('Ever','told','you','had','asthma'))
-Q41 <- tolower(c('Do','you','still','have','asthma'))
-Q42 <- tolower(c('Ever','told','you','had','skin','cancer'))
-Q43 <- tolower(c('Ever','told','you','had','any','other','types','of','cancer'))
-Q44 <- tolower(c('Ever','told','you','had','chronic','obstructive','pulmonary','disease','COPD','emphysema','or','chronic','bronchitis'))
-Q45 <- tolower(c('Ever','told','you','had','a','depressive','disorder','including','depression','major','depression','dysthymia','or','minor','depression'))
-Q46 <- tolower(c('Not','including','kidney','stones','bladder','infection','or','incontinence','were','you','ever','told','you','have','kidney','disease'))
-Q47 <- tolower(c('Ever','told','you','had','diabetes'))
-Q48 <- tolower(c('How','old','were','you','when','you','were','told','you','had','diabetes'))
-Q49 <- tolower(c('Ever','told','you','had','some','form','of','arthritis','rheumatoid','arthritis','gout','lupus','or','fibromyalgia'))
-Q50 <- tolower(c('Has','a','doctor','or','other','health','professional','ever','suggested','physical','activity','or','exercise','to','help','your','arthritis','or','joint','symptoms'))
-Q51 <- tolower(c('Have','you','ever','taken','an','educational','course','or','class','to','teach','you','how','to','manage','problems','related','to','your','arthritis','or','joint','symptoms'))
-Q52 <- tolower(c('Are','you','now','limited','in','any','way','in','any','of','your','usual','activities','because','of','arthritis','or','joint','symptoms'))
-Q53 <- tolower(c('In','the','next','question','we','are','referring','to','work','for','pay','Do','arthritis','or','joint','symptoms','now','affect','whether','you','work','the','type','of','work','you','do','or','the','amount','of','work','you','do'))
-Q54 <- tolower(c('Please','think','about','the','past','30','days','keeping','in','mind','all','of','your','joint','pain','or','aching','and','whether','or','not','you','have','taken','medication','During','the','past','30','days','how','bad','was','your','joint','pain','on','average','on','a','scale','of','0','to','10','where','0','is','no','pain','and','10','is','pain','or','aching','as','bad','as','it','can','be'))
-Q55 <- tolower(c('What','is','your','age'))
-Q56 <- tolower(c('Are','you','Hispanic','Latinoa','or','Spanish','origin'))
-Q57 <- tolower(c('Which','one','or','more','of','the','following','would','you','say','is','your','race'))
-Q58 <- tolower(c('Which','one','of','these','groups','would','you','say','best','represents','your','race'))
-Q59 <- tolower(c('Are','you','Married','Divorced','Widowed','Separated','Never','married','Or','A','member','of','an','unmarried','couple'))
-Q60 <- tolower(c('What','is','the','highest','grade','or','year','of','school','you','completed'))
-Q61 <- tolower(c('Do','you','own','or','rent','your','home'))
-Q62 <- tolower(c('In','what','county','do','you','currently','live'))
-Q63 <- tolower(c('What','is','the','ZIP','Code','where','you','currently','live'))
-Q64 <- tolower(c('Not','including','cell','phones','or','numbers','used','for','computers','fax','machines','or','security','systems','do','you','have','more','than','one','telephone','number','in','your','household'))
-Q65 <- tolower(c('How','many','of','these','telephone','numbers','are','residential','numbers'))
-Q66 <- tolower(c('How','many','cell','phones','do','you','have','for','personal','use'))
-Q67 <- tolower(c('Have','you','ever','served','on','active','duty','in','the','United','States','Armed','Forces','either','in','the','regular','military','or','in','a','National','Guard','or','military','reserve','unit'))
-Q68 <- tolower(c('Are','you','currently','Employed','for','wages','Selfemployed','Out','of','work','for','1','year','or','more','Out','of','work','for','less','than','1','year','A','Homemaker','A','Student','Retired','Or','Unable','to','work'))
-Q69 <- tolower(c('How','many','children','less','than','18','years','of','age','live','in','your','household'))
-Q70 <- tolower(c('Is','your','annual','household','income','from','all','sources'))
-Q71 <- tolower(c('About','how','much','do','you','weigh','without','shoes'))
-Q72 <- tolower(c('About','how','tall','are','you','without','shoes'))
-Q73 <- tolower(c('To','your','knowledge','are','you','now','pregnant'))
-Q74 <- tolower(c('Some','people','who','are','deaf','or','have','serious','difficulty','hearing','use','assistive','devices','to','communicate','by','phone','Are','you','deaf','or','do','you','have','serious','difficulty','hearing'))
-Q75 <- tolower(c('Are','you','blind','or','do','you','have','serious','difficulty','seeing','even','when','wearing','glasses'))
-Q76 <- tolower(c('Because','of','a','physical','mental','or','emotional','condition','do','you','have','serious','difficulty','concentrating','remembering','or','making','decisions'))
-Q77 <- tolower(c('Do','you','have','serious','difficulty','walking','or','climbing','stairs'))
-Q78 <- tolower(c('Do','you','have','difficulty','dressing','or','bathing'))
-Q79 <- tolower(c('Because','of','a','physical','mental','or','emotional','condition','do','you','have','difficulty','doing','errands','alone','such','as','visiting','a','doctor’s','office','or','shopping'))
-Q80 <- tolower(c('Have','you','smoked','at','least','100','cigarettes','in','your','entire','life'))
-Q81 <- tolower(c('Do','you','now','smoke','cigarettes','every','day','some','days','or','not','at','all'))
-Q82 <- tolower(c('During','the','past','12','months','have','you','stopped','smoking','for','one','day','or','longer','because','you','were','trying','to','quit','smoking'))
-Q83 <- tolower(c('How','long','has','it','been','since','you','last','smoked','a','cigarette','even','one','or','two','puffs'))
-Q84 <- tolower(c('Do','you','currently','use','chewing','tobacco','snuff','or','snus','every','day','some','days','or','not','at','all'))
-Q85 <- tolower(c('During','the','past','30','days','how','many','days','per','week','or','per','month','did','you','have','at','least','one','drink','of','any','alcoholic','beverage','such','as','beer','wine','a','malt','beverage','or','liquor'))
-Q86 <- tolower(c('One','drink','is','equivalent','to','a','12','ounce','beer','a','5','ounce','glass','of','wine','or','a','drink','with','one','shot','of','liquor','During','the','past','30','days','on','the','days','when','you','drank','about','how','many','drinks','did','you','drink','on','the','average'))
-Q87 <- tolower(c('Considering','all','types','of','alcoholic','beverages','how','many','times','during','the','past','30','days','did','you','have','','CATI','','=','5','for','men','','=','4','for','women','or','more','drinks','on','an','occasion'))
-Q88 <- tolower(c('During','the','past','30','days','what','is','the','largest','number','of','drinks','you','had','on','any','occasion'))
-Q89 <- tolower(c('During','the','past','month','other','than','your','regular','job','did','you','participate','in','any','physical','activities','or','exercises','such','as','running','calisthenics','golf','gardening','or','walking','for','exercise'))
-Q90 <- tolower(c('What','type','of','physical','activity','or','exercise','did','you','spend','the','most','time','doing','during','the','past','month'))
-Q91 <- tolower(c('How','many','times','per','week','or','per','month','did','you','take','part','in','this','activity','during','the','past','month'))
-Q92 <- tolower(c('And','when','you','took','part','in','this','activity','for','how','many','minutes','or','hours','did','you','usually','keep','at','it'))
-Q93 <- tolower(c('What','other','type','of','physical','activity','gave','you','the','next','most','exercise','during','the','past','month'))
-Q94 <- tolower(c('How','many','times','per','week','or','per','month','did','you','take','part','in','this','activity','during','the','past','month'))
-Q95 <- tolower(c('And','when','you','took','part','in','this','activity','for','how','many','minutes','or','hours','did','you','usually','keep','at','it'))
-Q96 <- tolower(c('During','the','past','month','how','many','times','per','week','or','per','month','did','you','do','physical','activities','or','exercises','to','strengthen','your','muscles'))
-Q97 <- tolower(c('Now','think','about','the','foods','you','ate','or','drank','during','the','past','month','that','is','the','past','30','days','including','meals','and','snacks','Not','including','juices','how','often','did','you','eat','fruit','You','can','tell','me','times','per','day','times','per','week','or','times','per','month'))
-Q98 <- tolower(c('Not','including','fruitflavored','drinks','or','fruit','juices','with','added','sugar','how','often','did','you','drink','100%','fruit','juice','such','as','apple','or','orange','juice'))
-Q99 <- tolower(c('How','often','did','you','eat','a','green','leafy','or','lettuce','salad','with','or','without','other','vegetables'))
-Q100 <- tolower(c('How','often','did','you','eat','any','kind','of','fried','potatoes','including','French','fries','home','fries','or','hash','browns'))
-Q101 <- tolower(c('How','often','did','you','eat','any','other','kind','of','potatoes','or','sweet','potatoes','such','as','baked','boiled','mashed','potatoes','or','potato','salad'))
-Q102 <- tolower(c('Not','including','lettuce','salads','and','potatoes','how','often','did','you','eat','other','vegetables'))
-Q103 <- tolower(c('During','the','past','12','months','have','you','had','either','a','flu','vaccine','that','was','sprayed','in','your','nose','or','a','flu','shot','injected','into','your','arm'))
-Q104 <- tolower(c('During','what','month','and','year','did','you','receive','your','most','recent','flu','vaccine','that','was','sprayed','in','your','nose','or','flu','shot','injected','into','your','arm'))
-Q105 <- tolower(c('Have','you','received','a','tetanus','shot','in','the','past','10','years'))
-Q106 <- tolower(c('Have','you','ever','had','a','pneumonia','shot','also','known','as','a','pneumococcal','vaccine'))
-Q107 <- tolower(c('The','next','few','questions','are','about','the','national','health','problem','of','HIV','the','virus','that','causes','AIDS','Please','remember','that','your','answers','are','strictly','confidential','and','that','you','don’t','have','to','answer','every','question','if','you','do','not','want','to','Although','we','will','ask','you','about','testing','we','will','not','ask','you','about','the','results','of','any','test','you','may','have','had','Including','fluid','testing','from','your','mouth','but','not','including','tests','you','may','have','had','for','blood','donation','have','you','ever','been','tested','for','HIV'))
-Q108 <- tolower(c('Not','including','blood','donations','in','what','month','and','year','was','your','last','HIV','test'))
-Q109 <- tolower(c('I','am','going','to','read','you','a','list','When','I','am','done','please','tell','me','if','any','of','the','situations','apply','to','you','You','do','not','need','to','tell','me','which','one','You','have','injected','any','drug','other','than','those','prescribed','for','you','in','the','past','year','You','have','been','treated','for','a','sexually','transmitted','disease','or','STD','in','the','past','year','You','have','given','or','received','money','or','drugs','in','exchange','for','sex','in','the','past','year','You','had','anal','sex','without','a','condom','in','the','past','year','You','had','four','or','more','sex','partners','in','the','past','year','Do','any','of','these','situations','apply','to','you'))
-Q110 <- tolower(c('Have','you','had','a','test','for','high','blood','sugar','or','diabetes','within','the','past','three','years'))
-Q111 <- tolower(c('Have','you','ever','been','told','by','a','doctor','or','other','health','professional','that','you','have','prediabetes','or','borderline','diabetes'))
-Q112 <- tolower(c('Are','you','now','taking','insulin'))
-Q113 <- tolower(c('About','how','often','do','you','check','your','blood','for','glucose','or','sugar'))
-Q114 <- tolower(c('Including','times','when','checked','by','a','family','member','or','friend','about','how','often','do','you','check','your','feet','for','any','sores','or','irritations'))
-Q115 <- tolower(c('About','how','many','times','in','the','past','12','months','have','you','seen','a','doctor','nurse','or','other','health','professional','for','your','diabetes'))
-Q116 <- tolower(c('About','how','many','times','in','the','past','12','months','has','a','doctor','nurse','or','other','health','professional','checked','you','for','AoneC'))
-Q117 <- tolower(c('About','how','many','times','in','the','past','12','months','has','a','health','professional','checked','your','feet','for','any','sores','or','irritations'))
-Q118 <- tolower(c('When','was','the','last','time','you','had','an','eye','exam','in','which','the','pupils','were','dilated','making','you','temporarily','sensitive','to','bright','light'))
-Q119 <- tolower(c('Has','a','doctor','ever','told','you','that','diabetes','has','affected','your','eyes','or','that','you','had','retinopathy'))
-Q120 <- tolower(c('Have','you','ever','taken','a','course','or','class','in','how','to','manage','your','diabetes','yourself'))
-Q121 <- tolower(c('Have','you','ever','been','told','by','a','doctor','or','other','health','professional','that','you','had','Chronic','Fatigue','Syndrome','CFS','or','Myalgic','Encephalomyelitis','ME'))
-Q122 <- tolower(c('Do','you','still','have','Chronic','Fatigue','Syndrome','CFS','or','Myalgic','Encephalomyelitis','ME'))
-Q123 <- tolower(c('Thinking','about','your','CFS','or','ME','during','the','past','6','months','how','many','hours','a','week','on','average','have','you','been','able','to','work','at','a','job','or','business','for','pay'))
-Q124 <- tolower(c('Have','you','ever','been','told','by','a','doctor','or','other','health','professional','that','you','had','Hepatitis','C'))
-Q125 <- tolower(c('Were','you','treated','for','Hepatitis','C','in','2015','or','after'))
-Q126 <- tolower(c('Were','you','treated','for','Hepatitis','C','prior','to','2015'))
-Q127 <- tolower(c('Do','you','still','have','Hepatitis','C'))
-Q128 <- tolower(c('The','next','question','is','about','Hepatitis','B','','Has','a','doctor','nurse','or','other','health','professional','ever','told','you','that','you','had','hepatitis','B'))
-Q129 <- tolower(c('Are','you','currently','taking','medicine','to','treat','hepatitis','B'))
-Q130 <- tolower(c('Have','you','ever','had','the','Human','Papilloma','virus','vaccination','or','HPV','vaccination'))
-Q131 <- tolower(c('How','many','HPV','shots','did','you','receive'))
-Q132 <- tolower(c('At','what','kind','of','place','did','you','get','your','last','flu','shot','or','vaccine'))
-Q133 <- tolower(c('Have','you','ever','had','the','shingles','or','zoster','vaccine'))
-Q134 <- tolower(c('You’ve','told','us','that','you','have','smoked','in','the','past','or','are','currently','smoking','The','next','questions','are','about','screening','for','lung','cancer','How','old','were','you','when','you','first','started','to','smoke','cigarettes','regularly'))
-Q135 <- tolower(c('How','old','were','you','when','you','last','smoked','cigarettes','regularly'))
-Q136 <- tolower(c('On','average','when','you','smoke','smoked','regularly','about','how','many','cigarettes','{dodid}','you','usually','smoke','each','day'))
-Q137 <- tolower(c('The','next','question','is','about','CT','or','CAT','scans','During','this','test','you','lie','flat','on','your','back','on','a','table','While','you','hold','your','breath','the','table','moves','through','a','donut','shaped','x-ray','machine','while','the','scan','is','done','In','the','last','12','months','did','you','have','a','CT','or','CAT','scan'))
-Q138 <- tolower(c('The','next','questions','are','about','breast','and','cervical','cancer','Have','you','ever','had','a','mammogram'))
-Q139 <- tolower(c('How','long','has','it','been','since','you','had','your','last','mammogram'))
-Q140 <- tolower(c('Have','you','ever','had','a','Pap','test'))
-Q141 <- tolower(c('How','long','has','it','been','since','you','had','your','last','Pap','test'))
-Q142 <- tolower(c('An','HPV','test','is','sometimes','given','with','the','Pap','test','for','cervical','cancer','screening','Have','you','ever','had','an','HPV','test'))
-Q143 <- tolower(c('How','long','has','it','been','since','you','had','your','last','HPV','test'))
-Q144 <- tolower(c('Have','you','had','a','hysterectomy'))
-Q145 <- tolower(c('Has','a','doctor','nurse','or','other','health','professional','ever','talked','with','you','about','the','advantages','of','the','ProstateSpecific','Antigen','or','PSA','test'))
-Q146 <- tolower(c('Has','a','doctor','nurse','or','other','health','professional','ever','talked','with','you','about','the','disadvantages','of','the','PSA','test'))
-Q147 <- tolower(c('Has','a','doctor','nurse','or','other','health','professional','ever','recommended','that','you','have','a','PSA','test'))
-Q148 <- tolower(c('Have','you','ever','had','a','PSA','test'))
-Q149 <- tolower(c('How','long','has','it','been','since','you','had','your','last','PSA','test'))
-Q150 <- tolower(c('What','was','the','main','reason','you','had','this','PSA','test','was','it','Part','of','a','routine','eam','Because','of','a','prostate','problem','Because','of','a','family','history','of','prostate','cancer','Because','you','were','told','you','had','prostate','cancer','Some','other','reason'))
-Q151 <- tolower(c('Which','one','of','the','following','best','describes','the','decision','to','have','the','PSA','test','done'))
-Q152 <- tolower(c('Who','made','the','decision','with','you'))
-Q153 <- tolower(c('A','blood','stool','test','is','a','test','that','may','use','a','special','kit','at','home','to','determine','whether','the','stool','contains','blood','Have','you','ever','had','this','test','using','a','home','kit'))
-Q154 <- tolower(c('How','long','has','it','been','since','you','had','your','last','blood','stool','test','using','a','home','kit'))
-Q155 <- tolower(c('Sigmoidoscopy','and','colonoscopy','are','exams','in','which','a','tube','is','inserted','in','the','rectum','to','view','the','colon','for','signs','of','cancer','or','other','health','problems','Have','you','ever','had','either','of','these','exams'))
-Q156 <- tolower(c('For','a','sigmoidoscopy','a','flexible','tube','is','inserted','into','the','rectum','to','look','for','problems','A','colonoscopy','is','similar','but','uses','a','longer','tube','and','you','are','usually','given','medication','through','a','needle','in','your','arm','to','make','you','sleepy','and','told','to','have','someone','else','drive','you','home','after','the','test','Was','your','most','recent','exam','a','sigmoidoscopy','or','a','colonoscopy'))
-Q157 <- tolower(c('How','long','has','it','been','since','you','had','your','last','sigmoidoscopy','or','colonoscopy'))
-Q158 <- tolower(c('You’ve','told','us','that','you','have','had','cancer','I','would','like','to','ask','you','a','few','more','questions','about','your','cancer','How','many','different','types','of','cancer','have','you','had'))
-Q159 <- tolower(c('At','what','age','were','you','told','that','you','had','cancer'))
-Q160 <- tolower(c('What','type','of','cancer','was','it'))
-Q161 <- tolower(c('Are','you','currently','receiving','treatment','for','cancer'))
-Q162 <- tolower(c('What','type','of','doctor','provides','the','majority','of','your','health','care','Cancer','Surgeon','Family','Practitioner','General','Surgeon','Gynecologic','Oncologist','General','Practitioner','Internist','Plastic','Surgeon','Reconstructive','Surgeon','Medical','Oncologist','Radiation','Oncologist','Urologist','Other'))
-Q163 <- tolower(c('Did','any','doctor','nurse','or','other','health','professional','ever','give','you','a','written','summary','of','all','the','cancer','treatments','that','you','received'))
-Q164 <- tolower(c('Have','you','ever','received','instructions','from','a','doctor','nurse','or','other','health','professional','about','where','you','should','return','or','who','you','should','see','for','routine','cancer','checkups','after','completing','your','treatment','for','cancer'))
-Q165 <- tolower(c('Were','these','instructions','written','down','or','printed','on','paper','for','you'))
-Q166 <- tolower(c('With','your','most','recent','diagnosis','of','cancer','did','you','have','health','insurance','that','paid','for','all','or','part','of','your','cancer','treatment'))
-Q167 <- tolower(c('Were','you','ever','denied','health','insurance','or','life','insurance','coverage','because','of','your','cancer'))
-Q168 <- tolower(c('Did','you','participate','in','a','clinical','trial','as','part','of','your','cancer','treatment'))
-Q169 <- tolower(c('Do','you','currently','have','physical','pain','caused','by','your','cancer','or','cancer','treatment'))
-Q170 <- tolower(c('Would','you','say','your','pain','is','currently','under','control','With','medication','or','treatment','Without','medication','or','treatment','Not','under','control','with','medication','or','treatment','Not','under','control','without','medication','or','treatment'))
-Q171 <- tolower(c('What','is','the','primary','source','of','your','health','care','coverage'))
-Q172 <- tolower(c('How','often','do','you','take','an','aspirin','to','prevent','or','control','heart','disease','heart','attacks','or','stroke','Would','you','say','Daily','Some','days','Used','to','take','it','but','had','to','stop','due','to','side','effects','or','Do','not','take','it'))
-Q173 <- tolower(c('Has','your','doctor','nurse','or','other','health','professional','recommended','you','check','your','blood','pressure','outside','of','the','office','or','at','home'))
-Q174 <- tolower(c('Do','you','regularly','check','your','blood','pressure','outside','of','your','healthcare','professional’s','office','or','at','home'))
-Q175 <- tolower(c('Do','you','take','it','mostly','at','home','or','on','a','machine','at','a','pharmacy','grocery','or','similar','location'))
-Q176 <- tolower(c('How','do','you','share','your','blood','pressure','numbers','that','you','collected','with','your','health','professional','Is','it','mostly','by','telephone','other','methods','such','as','emails','internet','portal','or','fax','or','in','person'))
-Q177 <- tolower(c('Are','you','currently','watching','or','reducing','your','sodium','or','salt','intake'))
-Q178 <- tolower(c('Has','a','doctor','or','other','health','professional','ever','advised','you','to','reduce','sodium','or','salt','intake'))
-Q179 <- tolower(c('Not','including','sprayon','tans','during','the','past','12','months','how','many','times','have','you','used','an','indoor','tanning','device','such','as','a','sunlamp','tanning','bed','or','booth'))
-Q180 <- tolower(c('During','the','past','12','months','how','many','times','have','you','had','a','sunburn'))
-Q181 <- tolower(c('When','you','go','outside','on','a','warm','sunny','day','for','more','than','one','hour','how','often','do','you','protect','yourself','from','the','sun','Is','that','Always','Most','of','the','time','Sometimes','Rarely','Never'))
-Q182 <- tolower(c('On','weekdays','in','the','summer','how','long','are','you','outside','per','day','between','10am','and','4pm'))
-Q183 <- tolower(c('On','weekends','in','the','summer','how','long','are','you','outside','each','day','between','10am','and','4pm'))
-Q184 <- tolower(c('The','next','few','questions','ask','about','difficulties','in','thinking','or','remembering','that','can','make','a','big','difference','in','everyday','activities','This','does','not','refer','to','occasionally','forgetting','your','keys','or','the','name','of','someone','you','recently','met','which','is','normal','This','refers','to','confusion','or','memory','loss','that','is','happening','more','often','or','getting','worse','such','as','forgetting','how','to','do','things','you’ve','always','done','or','forgetting','things','that','you','would','normally','know','We','want','to','know','how','these','difficulties','impact','you','During','the','past','12','months','have','you','experienced','confusion','or','memory','loss','that','is','happening','more','often','or','is','getting','worse'))
-Q185 <- tolower(c('During','the','past','12','months','as','a','result','of','confusion','or','memory','loss','how','often','have','you','given','up','daytoday','household','activities','or','chores','you','used','to','do','such','as','cooking','cleaning','taking','medications','driving','or','paying','bills','Would','you','say','it','is','Always','Usually','Sometimes','Rarely','Never'))
-Q186 <- tolower(c('As','a','result','of','confusion','or','memory','loss','how','often','do','you','need','assistance','with','these','daytoday','activities','Would','you','say','it','is','Always','Usually','Sometimes'))
-Q187 <- tolower(c('When','you','need','help','with','these','daytoday','activities','how','often','are','you','able','to','get','the','help','that','you','need','Would','you','say','it','is','Always','Usually','Sometimes','Rarely','Never'))
-Q188 <- tolower(c('During','the','past','12','months','how','often','has','confusion','or','memory','loss','interfered','with','your','ability','to','work','volunteer','or','engage','in','social','activities','outside','the','home','Would','you','say','it','is','Always','Usually','Sometimes','Rarely','Never'))
-Q189 <- tolower(c('Have','you','or','anyone','else','discussed','your','confusion','or','memory','loss','with','a','health','care','professional'))
-Q190 <- tolower(c('During','the','past','30','days','did','you','provide','regular','care','or','assistance','to','a','friend','or','family','member','who','has','a','health','problem','or','disability'))
-Q191 <- tolower(c('What','is','his','or','her','relationship','to','you'))
-Q192 <- tolower(c('For','how','long','have','you','provided','care','for','that','person'))
-Q193 <- tolower(c('In','an','average','week','how','many','hours','do','you','provide','care','or','assistance'))
-Q194 <- tolower(c('What','is','the','main','health','problem','longterm','illness','or','disability','that','the','person','you','care','for','has'))
-Q195 <- tolower(c('Does','the','person','you','care','for','also','have','Alzheimer’s','disease','dementia','or','other','cognitive','impairment','disorder'))
-Q196 <- tolower(c('In','the','past','30','days','did','you','provide','care','for','this','person','by','managing','personal','care','such','as','giving','medications','feeding','dressing','or','bathing'))
-Q197 <- tolower(c('In','the','past','30','days','did','you','provide','care','for','this','person','by','managing','household','tasks','such','as','cleaning','managing','money','or','preparing','meals'))
-Q198 <- tolower(c('In','the','next','2','years','do','you','expect','to','provide','care','or','assistance','to','a','friend','or','family','member','who','has','a','health','problem','or','disability'))
-Q199 <- tolower(c('Now','looking','back','before','you','were','18','years','of','age','Did','you','live','with','anyone','who','was','depressed','mentally','ill','or','suicidal'))
-Q200 <- tolower(c('Did','you','live','with','anyone','who','was','a','problem','drinker','or','alcoholic'))
-Q201 <- tolower(c('Did','you','live','with','anyone','who','used','illegal','street','drugs','or','who','abused','prescription','medications'))
-Q202 <- tolower(c('Did','you','live','with','anyone','who','served','time','or','was','sentenced','to','serve','time','in','a','prison','jail','or','other','correctional','facility'))
-Q203 <- tolower(c('Were','your','parents','separated','or','divorced'))
-Q204 <- tolower(c('How','often','did','your','parents','or','adults','in','your','home','ever','slap','hit','kick','punch','or','beat','each','other','up','Was','it','Never','Once','More','than','once'))
-Q205 <- tolower(c('Not','including','spanking','before','age','18','how','often','did','a','parent','or','adult','in','your','home','ever','hit','beat','kick','or','physically','hurt','you','in','any','way','Was','it','Never','Once','More','than','once'))
-Q206 <- tolower(c('How','often','did','a','parent','or','adult','in','your','home','ever','swear','at','you','insult','you','or','put','you','down','Was','it','Never','Once','More','than','once'))
-Q207 <- tolower(c('How','often','did','anyone','at','least','5','years','older','than','you','or','an','adult','ever','touch','you','sexually','Was','it','Never','Once','More','than','once'))
-Q208 <- tolower(c('How','often','did','anyone','at','least','5','years','older','than','you','or','an','adult','try','to','make','you','touch','them','sexually','Was','it','Never','Once','More','than','once'))
-Q209 <- tolower(c('How','often','did','anyone','at','least','5','years','older','than','you','or','an','adult','force','you','to','have','sex','Was','it','Never','Once','More','than','once'))
-Q210 <- tolower(c('The','last','time','you','had','sex','with','a','man','did','you','or','your','partner','do','anything','to','keep','you','from','getting','pregnant'))
-Q211 <- tolower(c('The','last','time','you','had','sex','with','a','man','what','did','you','or','your','partner','do','to','keep','you','from','getting','pregnant'))
-Q212 <- tolower(c('Some','reasons','for','not','doing','anything','to','keep','you','from','getting','pregnant','the','last','time','you','had','sex','might','include','wanting','a','pregnancy','not','being','able','to','pay','for','birth','control','or','not','thinking','that','you','can','get','pregnant','What','was','your','main','reason','for','not','using','a','method','to','prevent','pregnancy','the','last','time','you','had','sex','with','a','man'))
-Q213 <- tolower(c('You','told','me','earlier','that','your','last','routine','checkup','was','within','the','past','year','within','the','past','2','years','At','that','checkup','were','you','asked','in','person','or','on','a','form','if','you','drink','alcohol'))
-Q214 <- tolower(c('Did','the','health','care','provider','ask','you','in','person','or','on','a','form','how','much','you','drink'))
-Q215 <- tolower(c('Did','the','healthcare','provider','specifically','ask','whether','you','drank','5','FOR','MEN','4','FOR','WOMEN','or','more','alcoholic','drinks','on','an','occasion'))
-Q216 <- tolower(c('Were','you','offered','advice','about','what','level','of','drinking','is','harmful','or','risky','for','your','health'))
-Q217 <- tolower(c('Healthcare','providers','may','also','advise','patients','to','drink','less','for','various','reasons','At','your','last','routine','checkup','were','you','advised','to','reduce','or','quit','your','drinking'))
-Q218 <- tolower(c('During','the','past','30','days','on','how','many','days','did','you','use','marijuana','or','cannabis'))
-Q219 <- tolower(c('During','the','past','30','days','which','one','of','the','following','ways','did','you','use','marijuana','the','most','often','Did','you','usually','Smoke','it','for','eample','in','a','joint','bong','pipe','or','blunt','Eat','it','for','example','in','brownies','cakes','cookies','or','candy','Drink','it','for','example','in','tea','cola','or','alcohol','Vaporize','it','for','example','in','an','ecigarettelike','vaporizer','or','another','vaporizing','device','Dab','it','for','example','using','waes','or','concentrates','or','Use','it','some','other','way'))
-Q220 <- tolower(c('When','you','used','marijuana','or','cannabis','during','the','past','30','days','was','it','usually','For','medical','reasons','like','to','treat','or','decrease','symptoms','of','a','health','condition','For','nonmedical','reasons','like','to','have','fun','or','fit','in','or','For','both','medical','and','nonmedical','reasons'))
-Q221 <- tolower(c('What','kind','of','work','do','you','do','For','example','registered','nurse','janitor','cashier','auto','mechanic'))
-Q222 <- tolower(c('What','kind','of','business','or','industry','do','you','work','in','For','example','hospital','elementary','school','clothing','manufacturing','restaurant'))
-Q223 <- tolower(c('In','the','past','12','months','have','you','received','food','stamps','also','called','SNAP','the','Supplemental','Nutrition','Assistance','Program','on','an','EBT','card'))
-Q224 <- tolower(c('What','was','your','sex','at','birth','Was','it','male','or','female'))
-Q225 <- tolower(c('The','next','two','questions','are','about','sexual','orientation','and','gender','identity','Which','of','the','following','best','represents','how','you','think','of','yourself'))
-Q226 <- tolower(c('Which','of','the','following','best','represents','how','you','think','of','yourself'))
-Q227 <- tolower(c('Do','you','consider','yourself','to','be','transgender'))
-Q228 <- tolower(c('Previously','you','indicated','there','was','one','child','age','17','or','younger','in','your','household','I','would','like','to','ask','you','some','questions','about','that','child','If','C0815','is','1','and','C0815','does','not','equal','88','or','99','Previously','you','indicated','there','were','number','children','age','17','or','younger','in','your','household','Think','about','those','number','children','in','order','of','their','birth','from','oldest','to','youngest','The','oldest','child','is','the','first','child','and','the','youngest','child','is','the','last','Please','include','children','with','the','same','birth','date','including','twins','in','the','order','of','their','birth'))
-Q229 <- tolower(c('What','is','the','birth','month','and','year','of','the','xth','child'))
-Q230 <- tolower(c('Is','the','child','a','boy','or','a','girl'))
-Q231 <- tolower(c('Is','the','child','Hispanic','Latina','or','Spanish','origin'))
-Q232 <- tolower(c('Which','one','or','more','of','the','following','would','you','say','is','the','race','of','the','child'))
-Q233 <- tolower(c('Which','one','of','these','groups','would','you','say','best','represents','the','child’s','race'))
-Q234 <- tolower(c('How','are','you','related','to','the','child','Are','you','a','Parent','include','biologic','step','or','adoptive','parent','Grandparent','Foster','parent','or','guardian','Sibling','include','biologic','step','and','adoptive','sibling','Other','relative','Not','related','in','any','way'))
-Q235 <- tolower(c('The','next','two','questions','are','about','the','xth','child','Has','a','doctor','nurse','or','other','health','professional','EVER','said','that','the','child','has','asthma'))
-Q236 <- tolower(c('Does','the','child','still','have','asthma'))
-Q237 <- tolower(c('We','would','like','to','call','you','again','within','the','net','2','weeks','to','talk','in','more','detail','about','youryour','child’s','eperiences','with','asthma','The','information','will','be','used','to','help','develop','and','improve','the','asthma','programs','in','STATE','The','information','you','gave','us','today','and','any','you','give','us','in','the','future','will','be','kept','confidential','If','you','agree','to','this','we','will','keep','your','first','name','or','initials','and','phone','number','on','file','separate','from','the','answers','collected','today','Even','if','you','agree','now','you','or','others','may','refuse','to','participate','in','the','future'))
-Q238 <- tolower(c('Would','it','be','okay','if','we','called','you','back','to','ask','additional','asthmarelated','questions','at','a','later','time'))
-Q239 <- tolower(c('Which','person','in','the','household','was','selected','as','the','focus','of','the','asthma','callback'))
-Q240 <- tolower(c('Can','I','please','have','either','youryour','child’s','first','name','or','initials','so','we','will','know','who','to','ask','for','when','we','call','back'))
+Q1 <- tolower(c('State', 'FIPS', 'Code')) 
+Q2 <- tolower(c('File', 'Month'))
+Q3 <- tolower(c('Interview', 'Date'))
+Q4 <- tolower(c('Interview', 'Month'))
+Q5 <- tolower(c('Interview', 'Day'))
+Q6 <- tolower(c('Interview', 'Year'))
+Q7 <- tolower(c('Final', 'Disposition'))
+Q8 <- tolower(c('Annual', 'Sequence', 'Number'))
+Q9 <- tolower(c('Primary', 'Sampling', 'Unit', 'Equal', 'to', 'Annual', 'Sequence', 'Number'))
+Q10 <- tolower(c('Variable', 'only', 'on', 'the', 'land', 'line', 'survey', 'Is', 'this', 'phone', 'number'))
+Q11 <- tolower(c('Variable', 'only', 'on', 'the', 'land', 'line', 'survey', 'Is', 'this', 'a', 'private', 'residence'))
+Q12 <- tolower(c('Variable', 'only', 'on', 'the', 'land', 'line', 'survey', 'Do', 'you', 'live', 'in', 'college', 'housing'))
+Q13 <- tolower(c('Variable', 'only', 'on', 'the', 'land', 'line', 'survey', 'Do', 'you', 'currently', 'live', 'in', 'state'))
+Q14 <- tolower(c('Variable', 'only', 'on', 'the', 'land', 'line', 'survey', 'Is', 'this', 'a', 'cell', 'telephone'))
+Q15 <- tolower(c('Variable', 'only', 'on', 'the', 'land', 'line', 'survey', 'Are', 'you', '18', 'years', 'of', 'age', 'or', 'older'))
+Q16 <- tolower(c('Are', 'you', 'male', 'or', 'female'))
+Q17 <- tolower(c('Variable', 'only', 'on', 'the', 'land', 'line', 'survey', 'I', 'need', 'to', 'randomly', 'select', 'one', 'adult', 'who', 'lives', 'in', 'your', 'household', 'to', 'be', 'interviewed', 'Excluding', 'adults', 'living', 'away', 'from', 'home', 'such', 'as', 'students', 'away', 'at', 'college', 'how', 'many', 'members', 'of', 'your', 'household', 'including', 'yourself', 'are', '18', 'years', 'of', 'age', 'or', 'older'))
+Q18 <- tolower(c('Are', 'you', 'male', 'or', 'female'))
+Q19 <- tolower(c('Variable', 'only', 'on', 'the', 'land', 'line', 'survey', 'How', 'many', 'of', 'these', 'adults', 'are', 'men'))
+Q20 <- tolower(c('Variable', 'only', 'on', 'the', 'land', 'line', 'survey', 'So', 'the', 'number', 'of', 'women', 'in', 'the', 'household', 'is', 'Is', 'that', 'correct'))
+Q21 <- tolower(c('The', 'person', 'in', 'your', 'household', 'that', 'I', 'need', 'to', 'speak', 'with', 'is', 'Are', 'you', 'the', 'in', 'this', 'household'))
+Q22 <- tolower(c('Variable', 'only', 'on', 'the', 'cell', 'phone', 'survey', 'Is', 'this', 'a', 'safe', 'time', 'to', 'talk', 'with', 'you'))
+Q23 <- tolower(c('Variable', 'only', 'on', 'the', 'cell', 'phone', 'survey', 'Is', 'this', 'phone', 'number'))
+Q24 <- tolower(c('Variable', 'only', 'on', 'the', 'cell', 'phone', 'survey', 'Is', 'this', 'a', 'cell', 'phone'))
+Q25 <- tolower(c('Variable', 'only', 'on', 'the', 'cell', 'phone', 'survey', 'Are', 'you', '18', 'years', 'of', 'age', 'or', 'older'))
+Q26 <- tolower(c('Are', 'you', 'male', 'or', 'female'))
+Q27 <- tolower(c('Variable', 'only', 'on', 'the', 'cell', 'phone', 'survey', 'Do', 'you', 'live', 'in', 'a', 'private', 'residence'))
+Q28 <- tolower(c('Variable', 'only', 'on', 'the', 'cell', 'phone', 'survey', 'Do', 'you', 'live', 'in', 'college', 'housing'))
+Q29 <- tolower(c('Variable', 'only', 'on', 'the', 'cell', 'phone', 'survey', 'Do', 'you', 'currently', 'live', 'in', 'state'))
+Q30 <- tolower(c('Variable', 'only', 'on', 'the', 'cell', 'phone', 'survey', 'Do', 'you', 'also', 'have', 'a', 'landline', 'telephone', 'in', 'your', 'home', 'that', 'is', 'used', 'to', 'make', 'and', 'receive', 'calls'))
+Q31 <- tolower(c('Variable', 'only', 'on', 'the', 'cell', 'phone', 'survey', 'How', 'many', 'members', 'of', 'your', 'household', 'including', 'yourself', 'are', '18', 'years', 'of', 'age', 'or', 'older'))
+Q32 <- tolower(c('Sex', 'of', 'Respondent'))
+Q33 <- tolower(c('Would', 'you', 'say', 'that', 'in', 'general', 'your', 'health', 'is'))
+Q34 <- tolower(c('Now', 'thinking', 'about', 'your', 'physical', 'health', 'which', 'includes', 'physical', 'illness', 'and', 'injury', 'for', 'how', 'many', 'days', 'during', 'the', 'past', '30', 'days', 'was', 'your', 'physical', 'health', 'not', 'good'))
+Q35 <- tolower(c('Now', 'thinking', 'about', 'your', 'mental', 'health', 'which', 'includes', 'stress', 'depression', 'and', 'problems', 'with', 'emotions', 'for', 'how', 'many', 'days', 'during', 'the', 'past', '30', 'days', 'was', 'your', 'mental', 'health', 'not', 'good'))
+Q36 <- tolower(c('During', 'the', 'past', '30', 'days', 'for', 'about', 'how', 'many', 'days', 'did', 'poor', 'physical', 'or', 'mental', 'health', 'keep', 'you', 'from', 'doing', 'your', 'usual', 'activities', 'such', 'as', 'self-care', 'work', 'or', 'recreation'))
+Q37 <- tolower(c('Do', 'you', 'have', 'any', 'kind', 'of', 'health', 'care', 'coverage', 'including', 'health', 'insurance', 'prepaid', 'plans', 'such', 'as', 'HMOs', 'or', 'government', 'plans', 'such', 'as', 'Medicare', 'or', 'Indian', 'Health', 'Service'))
+Q38 <- tolower(c('Do', 'you', 'have', 'one', 'person', 'you', 'think', 'of', 'as', 'your', 'personal', 'doctor', 'or', 'health', 'care', 'provider'))
+Q39 <- tolower(c('Was', 'there', 'a', 'time', 'in', 'the past 12 months when you needed to see a doctor but could not because of cost'))
+Q40 <- tolower(c('About', 'how', 'long', 'has', 'it', 'been', 'since', 'you', 'last', 'visited', 'a', 'doctor', 'for', 'a', 'routine', 'checkup'))
+Q41 <- tolower(c('During', 'the', 'past', 'month', 'other', 'than', 'your', 'regular', 'job', 'did', 'you', 'participate', 'in', 'any', 'physical', 'activities', 'or', 'exercises', 'such', 'as', 'running', 'calisthenics', 'golf', 'gardening', 'or', 'walking', 'for', 'exercise'))
+Q42 <- tolower(c('On', 'average', 'how', 'many', 'hours', 'of', 'sleep', 'do', 'you', 'get', 'in', 'a', '24-hour', 'period'))
+Q43 <- tolower(c('Has', 'a', 'doctor', 'nurse', 'or', 'other', 'health', 'professional', 'ever', 'told', 'you', 'that', 'you', 'had', 'any', 'of', 'the', 'following', 'you', 'had', 'a', 'heart', 'attack', 'also', 'called', 'a', 'myocardial', 'infarction'))
+Q44 <- tolower(c('Ever', 'told', 'you', 'had', 'angina', 'or', 'coronary', 'heart', 'disease'))
+Q45 <- tolower(c('Ever', 'told', 'you', 'had', 'a', 'stroke'))
+Q46 <- tolower(c('Ever', 'told', 'you', 'had', 'asthma'))
+Q47 <- tolower(c('Do', 'you', 'still', 'have', 'asthma'))
+Q48 <- tolower(c('Ever', 'told', 'you', 'had', 'skin', 'cancer'))
+Q49 <- tolower(c('Ever', 'told', 'you', 'had', 'any', 'other', 'types', 'of', 'cancer'))
+Q50 <- tolower(c('Ever', 'told', 'you', 'had', 'chronic', 'obstructive', 'pulmonary', 'disease', 'COPD', 'emphysema', 'or', 'chronic', 'bronchitis'))
+Q51 <- tolower(c('Ever', 'told', 'you', 'had', 'some', 'form', 'of', 'arthritis', 'rheumatoid', 'arthritis', 'gout', 'lupus', 'or', 'fibromyalgia', 'Arthritis', 'diagnoses', 'include', 'rheumatism', 'polymyalgia', 'rheumatica', 'osteoarthritis', 'tendonitis', 'bursitis', 'bunion', 'tennis', 'elbow', 'carpal', 'tunnel', 'syndrome', 'tarsal', 'tunnel', 'syndrome', 'joint', 'infection', 'etc'))
+Q52 <- tolower(c('Ever', 'told', 'you', 'had', 'a', 'depressive', 'disorder', 'including', 'depression', 'major', 'depression', 'dysthymia', 'or', 'minor', 'depression'))
+Q53 <- tolower(c('were', 'you', 'ever', 'told', 'you', 'had', 'kidney', 'disease'))
+Q54 <- tolower(c('Ever', 'told', 'you', 'had', 'diabetes', 'Was', 'this', 'only', 'when', 'you', 'were', 'pregnant'))
+Q55 <- tolower(c('How', 'old', 'were', 'you', 'when', 'you', 'were', 'told', 'you', 'had', 'diabetes'))
+Q56 <- tolower(c('Including', 'all', 'types', 'of', 'dentists', 'such', 'as', 'orthodontists', 'oral', 'surgeons', 'and', 'all', 'other', 'dental', 'specialists', 'as', 'well', 'as', 'dental', 'hygienists', 'how', 'long', 'has', 'it', 'been', 'since', 'you', 'last', 'visited', 'a', 'dentist', 'or', 'a', 'dental', 'clinic', 'for', 'any', 'reason'))
+Q57 <- tolower(c('Not', 'including', 'teeth', 'lost', 'for', 'injury', 'or', 'orthodontics', 'how', 'many', 'of', 'your', 'permanent', 'teeth', 'have', 'been', 'removed', 'because', 'of', 'tooth', 'decay', 'or', 'gum', 'disease'))
+Q58 <- tolower(c('Are', 'you', 'marital', 'status'))
+Q59 <- tolower(c('What', 'is', 'the', 'highest', 'grade', 'or', 'year', 'of', 'school', 'you', 'completed'))
+Q60 <- tolower(c('Do', 'you', 'own', 'or', 'rent', 'your', 'home'))
+Q61 <- tolower(c('Not', 'including', 'cell', 'phones', 'or', 'numbers', 'used', 'for', 'computers', 'fax', 'machines', 'or', 'security', 'systems', 'do', 'you', 'have', 'more', 'than', 'one', 'telephone', 'number', 'in', 'your', 'household'))
+Q62 <- tolower(c('How', 'many', 'of', 'these', 'telephone', 'numbers', 'are', 'residential', 'numbers'))
+Q63 <- tolower(c('How', 'many', 'cell', 'phones', 'do', 'you', 'have', 'for', 'personal', 'use'))
+Q64 <- tolower(c('Have', 'you', 'ever', 'served', 'on', 'active', 'duty', 'in', 'the', 'United', 'States', 'Armed', 'Forces', 'either', 'in', 'the', 'regular', 'military', 'or', 'in', 'a', 'National', 'Guard', 'or', 'military', 'reserve', 'unit'))
+Q65 <- tolower(c('Are', 'you', 'currently', 'Employed'))
+Q66 <- tolower(c('How', 'many', 'children', 'less', 'than 18 years of age live in your household'))
+Q67 <- tolower(c('Is', 'your', 'annual', 'household', 'income', 'from', 'all', 'sources'))
+Q68 <- tolower(c('To', 'your', 'knowledge', 'are', 'you', 'now', 'pregnant'))
+Q69 <- tolower(c('About', 'how', 'much', 'do', 'you', 'weigh', 'without', 'shoes'))
+Q70 <- tolower(c('About', 'how', 'tall', 'are', 'you', 'without', 'shoes'))
+Q71 <- tolower(c('Are', 'you', 'deaf', 'or', 'do', 'you', 'have', 'serious', 'difficulty', 'hearing'))
+Q72 <- tolower(c('Are', 'you', 'blind', 'or', 'do', 'you', 'have', 'serious', 'difficulty', 'seeing', 'even', 'when', 'wearing', 'glasses'))
+Q73 <- tolower(c('Because', 'of', 'a', 'physical', 'mental', 'or', 'emotional', 'condition', 'do', 'you', 'have', 'serious', 'difficulty', 'concentrating', 'remembering', 'or', 'making', 'decisions'))
+Q74 <- tolower(c('Do', 'you', 'have', 'serious', 'difficulty', 'walking', 'or', 'climbing', 'stairs'))
+Q75 <- tolower(c('Do', 'you', 'have', 'difficulty', 'dressing', 'or', 'bathing'))
+Q76 <- tolower(c('Because', 'of', 'a', 'physical', 'mental', 'or', 'emotional', 'condition', 'do', 'you', 'have', 'difficulty', 'doing', 'errands', 'alone', 'such', 'as', 'visiting', 'a', 'doctor', 'office', 'or', 'shopping'))
+Q77 <- tolower(c('Have', 'you', 'smoked', 'at', 'least', '100', 'cigarettes', 'in', 'your', 'entire', 'life'))
+Q78 <- tolower(c('Do', 'you', 'now', 'smoke', 'cigarettes', 'every', 'day', 'some', 'days', 'or', 'not', 'at', 'all'))
+Q79 <- tolower(c('During', 'the', 'past', '12', 'months', 'have', 'you', 'stopped', 'smoking', 'for', 'one', 'day', 'or', 'longer', 'because', 'you', 'were', 'trying', 'to', 'quit', 'smoking'))
+Q80 <- tolower(c('How', 'long', 'has', 'it', 'been', 'since', 'you', 'last', 'smoked', 'a', 'cigarette', 'even', 'one', 'or', 'two', 'puffs'))
+Q81 <- tolower(c('Do', 'you', 'currently', 'use', 'chewing', 'tobacco', 'snuff', 'or', 'snus', 'every', 'day', 'some', 'days', 'or', 'not', 'at', 'all'))
+Q82 <- tolower(c('During', 'the', 'past', '30', 'days', 'how', 'many', 'days', 'per', 'week', 'or', 'per', 'month', 'did', 'you', 'have', 'at', 'least', 'one', 'drink', 'of', 'any', 'alcoholic', 'beverage', 'such', 'as', 'beer', 'wine', 'a', 'malt', 'beverage', 'or', 'liquor'))
+Q83 <- tolower(c('One', 'drink', 'is', 'equivalent', 'to', 'a', '12-ounce', 'beer', 'a', '5-ounce', 'glass', 'of', 'wine', 'or', 'a', 'drink', 'with', 'one', 'shot', 'of', 'liquor', 'During', 'the', 'past', '30', 'days', 'on', 'the', 'days', 'when', 'you', 'drank', 'about', 'how', 'many', 'drinks', 'did', 'you', 'drink', 'on', 'the', 'average'))
+Q84 <- tolower(c('Considering', 'all', 'types', 'of', 'alcoholic', 'beverages', 'how', 'many', 'times', 'during', 'the', 'past', '30', 'days', 'did', 'you', 'have', '5', 'or', 'more', 'drinks', 'for', 'men', 'or', '4', 'or', 'more', 'drinks', 'for', 'women', 'on', 'an', 'occasion'))
+Q85 <- tolower(c('During', 'the', 'past', '30', 'days', 'what', 'is', 'the', 'largest', 'number', 'of', 'drinks', 'you', 'had', 'on', 'any', 'occasion'))
+Q86 <- tolower(c('During', 'the', 'past', '12', 'months', 'have', 'you', 'had', 'either', 'flu', 'vaccine', 'that', 'was', 'sprayed', 'in', 'your', 'nose', 'or', 'flu', 'shot', 'injected', 'into', 'your', 'arm'))
+Q87 <- tolower(c('During', 'what', 'month', 'and', 'year', 'did', 'you', 'receive', 'your', 'most', 'recent', 'flu', 'vaccine', 'that', 'was', 'sprayed', 'in', 'your', 'nose', 'or', 'flu', 'shot', 'injected', 'into', 'your', 'arm'))
+Q88 <- tolower(c('Have', 'you', 'ever', 'had', 'the', 'shingles', 'or', 'zoster', 'vaccine'))
+Q89 <- tolower(c('Have', 'you', 'ever', 'had', 'a', 'pneumonia', 'shot', 'also', 'known', 'as', 'a', 'pneumococcal', 'vaccine'))
+Q90 <- tolower(c('In', 'the', 'past', '12', 'months', 'how', 'many', 'times', 'have', 'you', 'fallen'))
+Q91 <- tolower(c('How', 'many', 'of', 'these', 'falls', 'caused', 'an', 'injury', 'that', 'limited', 'your', 'regular', 'activities', 'for', 'at', 'least', 'a', 'day'))
+Q92 <- tolower(c('How', 'often', 'do', 'you', 'use', 'seat', 'belts', 'when', 'you', 'drive', 'or', 'ride', 'in', 'a', 'car'))
+Q93 <- tolower(c('During', 'the', 'past', '30', 'days', 'how', 'many', 'times', 'have', 'you', 'driven', 'when', 'you', 'have', 'had', 'perhaps', 'too', 'much', 'to', 'drink'))
+Q94 <- tolower(c('Have', 'you', 'ever', 'had', 'a', 'mammogram'))
+Q95 <- tolower(c('How', 'long', 'has', 'it', 'been', 'since', 'you', 'had', 'your', 'last', 'mammogram'))
+Q96 <- tolower(c('Have', 'you', 'ever', 'had', 'a', 'Pap', 'test'))
+Q97 <- tolower(c('How', 'long', 'has', 'it', 'been', 'since', 'you', 'had', 'your', 'last', 'Pap', 'test'))
+Q98 <- tolower(c('An', 'HPV', 'test', 'is', 'sometimes', 'given', 'with', 'the', 'Pap', 'test', 'for', 'cervical', 'cancer', 'screening', 'Have', 'you', 'ever', 'had', 'an', 'HPV', 'test'))
+Q99 <- tolower(c('How', 'long', 'has', 'it', 'been', 'since', 'you', 'had', 'your', 'last', 'HPV', 'test'))
+Q100 <- tolower(c('Have', 'you', 'had', 'a', 'hysterectomy'))
+Q101 <- tolower(c('Has', 'a', 'doctor', 'nurse', 'or', 'other', 'health', 'professional', 'ever', 'talked', 'with', 'you', 'about', 'the', 'advantages', 'of', 'the', 'Prostate', 'Specific', 'Antigen', 'or', 'PSA', 'test')) 
+Q102 <- tolower(c('Has', 'a', 'doctor', 'nurse', 'or', 'other', 'health', 'professional', 'ever', 'talked', 'with', 'you', 'about', 'the', 'disadvantages', 'of', 'the', 'PSA', 'test'))
+Q103 <- tolower(c('Has', 'a', 'doctor', 'nurse', 'or', 'other', 'health', 'professional', 'ever', 'recommended', 'that', 'you', 'have', 'a', 'PSA', 'test'))
+Q104 <- tolower(c('Have', 'you', 'ever', 'had', 'a', 'PSA', 'test'))
+Q105 <- tolower(c('How', 'long', 'has', 'it', 'been', 'since', 'you', 'had', 'your', 'last', 'PSA', 'test'))
+Q106 <- tolower(c('What', 'was', 'the', 'MAIN', 'reason', 'you', 'had', 'this', 'PSA', 'test', 'was', 'it'))
+Q107 <- tolower(c('A', 'colonoscopy', 'checks', 'the', 'entire', 'colon.', 'You', 'are', 'usually', 'given', 'medication', 'through', 'a', 'needle', 'in', 'your', 'arm', 'to', 'make', 'you', 'sleepy', 'and', 'told', 'to', 'have', 'someone', 'else', 'drive', 'you', 'home', 'after', 'the', 'test', 'Have', 'you', 'ever', 'had', 'a', 'colonoscopy'))
+Q108 <- tolower(c('How', 'long', 'has', 'it', 'been', 'since', 'you', 'had', 'this', 'test'))
+Q109 <- tolower(c('A', 'sigmoidoscopy', 'checks', 'part', 'of', 'the', 'colon', 'and', 'you', 'are', 'fully', 'awake', 'Have', 'you', 'ever', 'had', 'a', 'sigmoidoscopy'))
+Q110 <- tolower(c('How', 'long', 'has', 'it', 'been', 'since', 'you', 'had', 'this', 'test'))
+Q111 <- tolower(c('A', 'blood', 'stool', 'test', 'is', 'a', 'test', 'that', 'may', 'use', 'a', 'special', 'kit', 'at', 'home', 'to', 'determine', 'whether', 'the', 'stool', 'contains', 'blood', 'Have', 'you', 'ever', 'had', 'this', 'test', 'using', 'a', 'home', 'kit'))
+Q112 <- tolower(c('How', 'long', 'has', 'it', 'been', 'since', 'you', 'had', 'this', 'test'))
+Q113 <- tolower(c('Another', 'test', 'uses', 'a', 'special', 'kit', 'to', 'obtain', 'an', 'entire', 'bowel', 'movement', 'at', 'home', 'and', 'returns', 'the', 'kit', 'to', 'a', 'lab', 'Have', 'you', 'ever', 'had', 'this', 'test'))
+Q114 <- tolower(c('How', 'long', 'has', 'it', 'been', 'since', 'you', 'had', 'this', 'test'))
+Q115 <- tolower(c('For', 'a', 'virtual', 'colonoscopy', 'your', 'colon', 'is', 'filled', 'with', 'air', 'and', 'you', 'are', 'moved', 'through', 'a', 'donut', 'shaped', 'x-ray', 'machine', 'as', 'you', 'lie', 'on', 'your', 'back', 'and', 'then', 'on', 'your', 'stomach', 'Have', 'you', 'ever', 'had', 'a', 'virtual', 'colonoscopy'))
+Q116 <- tolower(c('How', 'long', 'has', 'it', 'been', 'since', 'you', 'had', 'this', 'test'))
+Q117 <- tolower(c('Including', 'fluid', 'testing', 'from', 'your', 'mouth', 'but', 'not', 'including', 'tests', 'you', 'may', 'have', 'had', 'for', 'blood', 'donation', 'have', 'you', 'ever', 'been', 'tested', 'for', 'HIV'))
+Q118 <- tolower(c('Not', 'including', 'blood', 'donations', 'in', 'what', 'month', 'and', 'year', 'was', 'your', 'last', 'HIV', 'test'))
+Q119 <- tolower(c('I', 'am', 'going', 'to', 'read', 'you', 'a', 'list', 'When', 'I', 'am', 'done', 'please', 'tell', 'me', 'if', 'any', 'of', 'the', 'situations', 'apply', 'to', 'you', 'You', 'do', 'not', 'need', 'to', 'tell', 'me', 'which', 'one', 'You', 'have', 'injected', 'any', 'drug', 'other', 'than', 'those', 'prescribed', 'for', 'you', 'in', 'the', 'past', 'year', 'You', 'have', 'been', 'treated', 'for', 'a', 'sexually', 'transmitted', 'disease', 'or', 'STD', 'in', 'the', 'past', 'year', 'You', 'have', 'given', 'or', 'received', 'money', 'or', 'drugs', 'in', 'exchange', 'for', 'sex', 'in', 'the', 'past', 'year'))
+Q120 <- tolower(c('Have', 'you', 'had', 'a', 'test', 'for', 'high', 'blood', 'sugar', 'or', 'diabetes', 'within', 'the', 'past', 'three', 'years'))
+Q121 <- tolower(c('Have', 'you', 'ever', 'been', 'told', 'by', 'a', 'doctor', 'or', 'other', 'health', 'professional', 'that', 'you', 'have', 'pre-diabetes', 'or', 'borderline', 'diabetes', 'Was', 'this', 'only', 'when', 'you', 'were', 'pregnant'))
+Q122 <- tolower(c('Are', 'you', 'now', 'taking', 'insulin'))
+Q123 <- tolower(c('About', 'how', 'often', 'do', 'you', 'check', 'your', 'blood', 'for', 'glucose', 'or', 'sugar'))
+Q124 <- tolower(c('Including', 'times', 'when', 'checked', 'by', 'a', 'family', 'member', 'or', 'friend', 'about', 'how', 'often', 'do', 'you', 'check', 'your', 'feet', 'for', 'any', 'sores', 'or', 'irritations'))
+Q125 <- tolower(c('About', 'how', 'many', 'times', 'in', 'the', 'past', '12', 'months', 'have', 'you', 'seen', 'a', 'doctor', 'nurse', 'or', 'other', 'health', 'professional', 'for', 'your', 'diabetes'))
+Q126 <- tolower(c('About', 'how', 'many', 'times', 'in', 'the', 'past', '12', 'months', 'has', 'a', 'doctor', 'nurse', 'or', 'other', 'health', 'professional', 'checked', 'you', 'for', 'A', 'one', 'C'))
+Q127 <- tolower(c('About', 'how', 'many', 'times', 'in', 'the', 'past', '12', 'months', 'has', 'a', 'health', 'professional', 'checked', 'your', 'feet', 'for', 'any', 'sores', 'or', 'irritations'))
+Q128 <- tolower(c('When', 'was', 'the', 'last', 'time', 'you', 'had', 'an', 'eye', 'exam', 'in', 'which', 'the', 'pupils', 'were', 'dilated', 'making', 'you', 'temporarily', 'sensitive', 'to', 'bright', 'light'))
+Q129 <- tolower(c('Has', 'a', 'doctor', 'ever', 'told', 'you', 'that', 'diabetes', 'has', 'affected', 'your', 'eyes', 'or', 'that', 'you', 'had', 'retinopathy'))
+Q130 <- tolower(c('Have', 'you', 'ever', 'taken', 'a', 'course', 'or', 'class', 'in', 'how', 'to', 'manage', 'your', 'diabetes', 'yourself'))
+Q131 <- tolower(c('Have', 'you', 'ever', 'been', 'told', 'by', 'a', 'doctor', 'or', 'other', 'health', 'professional', 'that', 'you', 'had', 'Chronic', 'Fatigue', 'Syndrome', 'CFS', 'or', 'Myalgic', 'Encephalomyelitis', 'ME'))
+Q132 <- tolower(c('Do', 'you', 'still', 'have', 'Chronic', 'Fatigue', 'Syndrome', 'CFS', 'or', 'Myalgic', 'Encephalomyelitis', 'ME'))
+Q133 <- tolower(c('Thinking', 'about', 'your', 'CFS', 'or', 'ME,', 'during', 'the', 'past', '6', 'months,', 'how', 'many', 'hours', 'a', 'week', 'on', 'average', 'have', 'you', 'been', 'able', 'to', 'work', 'at', 'a', 'job', 'or', 'business', 'for', 'pay'))
+Q134 <- tolower(c('Have', 'you', 'ever', 'been', 'told', 'by', 'a', 'doctor', 'or', 'other', 'health', 'professional', 'that', 'you', 'had', 'Hepatitis', 'C'))
+Q135 <- tolower(c('Were', 'you', 'treated', 'for', 'Hepatitis', 'C', 'in', '2015', 'or', 'after'))
+Q136 <- tolower(c('Were', 'you', 'treated', 'for', 'Hepatitis', 'C', 'prior', 'to', '2015'))
+Q137 <- tolower(c('Do', 'you', 'still', 'have', 'Hepatitis', 'C'))
+Q138 <- tolower(c('The', 'next', 'question', 'is', 'about', 'Hepatitis', 'B', 'Has', 'a', 'doctor', 'nurse,', 'or', 'other', 'health', 'professional', 'ever', 'told', 'you', 'that', 'you', 'had', 'hepatitis', 'B'))
+Q139 <- tolower(c('Are', 'you', 'currently', 'taking', 'medicine', 'to', 'treat', 'hepatitis', 'B'))
+Q140 <- tolower(c('What', 'is', 'the', 'primary', 'source', 'of', 'your', 'health', 'care', 'coverage', 'Is', 'it'))
+Q141 <- tolower(c('During', 'the', 'past', '12', 'months', 'have', 'you', 'experienced', 'confusion', 'or', 'memory', 'loss', 'that', 'is', 'happening', 'more', 'often', 'or', 'is', 'getting', 'worse'))
+Q142 <- tolower(c('During', 'the', 'past', '12', 'months', 'as', 'a', 'result', 'of', 'confusion', 'or', 'memory', 'loss,', 'how', 'often', 'have', 'you', 'given', 'up', 'day-to-day', 'household', 'activities', 'or', 'chores', 'you', 'used', 'to', 'do,', 'such', 'as', 'cooking', 'cleaning', 'taking', 'medications', 'driving', 'or', 'paying', 'bills'))
+Q143 <- tolower(c('As', 'a', 'result', 'of', 'confusion', 'or', 'memory', 'loss', 'how', 'often', 'do', 'you', 'need', 'assistance', 'with', 'these', 'day', 'to', 'day', 'activities'))
+Q144 <- tolower(c('When', 'you', 'need', 'help', 'with', 'these', 'day', 'to', 'day', 'activities,', 'how', 'often', 'are', 'you', 'able', 'to', 'get', 'the', 'help', 'that', 'you', 'need'))
+Q145 <- tolower(c('During', 'the', 'past', '12', 'months', 'how', 'often', 'has', 'confusion', 'or', 'memory', 'loss', 'interfered', 'with', 'your', 'ability', 'to', 'work', 'volunteer', 'or', 'engage', 'in', 'social', 'activities', 'outside', 'the', 'home'))
+Q146 <- tolower(c('Have', 'you', 'or', 'anyone', 'else', 'discussed', 'your', 'confusion', 'or', 'memory', 'loss', 'with', 'a', 'health', 'care', 'professional'))
+Q147 <- tolower(c('During', 'the', 'past', '30', 'days', 'did', 'you', 'provide', 'regular', 'care', 'or', 'assistance', 'to', 'a', 'friend', 'or', 'family', 'member', 'who', 'has', 'a', 'health', 'problem', 'or', 'disability'))
+Q148 <- tolower(c('What', 'is', 'his', 'or', 'her', 'relationship', 'to', 'you'))
+Q149 <- tolower(c('For', 'how', 'long', 'have', 'you', 'provided', 'care', 'for', 'that', 'person'))
+Q150 <- tolower(c('In', 'an', 'average', 'week', 'how', 'many', 'hours', 'do', 'you', 'provide', 'care', 'or', 'assistance'))
+Q151 <- tolower(c('What', 'is', 'the', 'main', 'health', 'problem,', 'long', 'term', 'illness,', 'or', 'disability', 'that', 'the', 'person', 'you', 'care', 'for', 'has'))
+Q152 <- tolower(c('Does', 'the', 'person', 'you', 'care', 'for', 'also', 'have', 'Alzheimers', 'disease', 'dementia', 'or', 'other', 'cognitive', 'impairment', 'disorder'))
+Q153 <- tolower(c('In', 'the', 'past', '30', 'days', 'did', 'you', 'provide', 'care', 'for', 'this', 'person', 'by', 'managing', 'personal', 'care', 'such', 'as', 'giving', 'medications', 'feeding', 'dressing', 'or', 'bathing'))
+Q154 <- tolower(c('In', 'the', 'past', '30', 'days', 'did', 'you', 'provide', 'care', 'for', 'this', 'person', 'by', 'managing', 'household', 'tasks', 'such', 'as', 'cleaning', 'managing', 'money', 'or', 'preparing', 'meals'))
+Q155 <- tolower(c('In', 'the', 'next', '2', 'years', 'do', 'you', 'expect', 'to', 'provide', 'care', 'or', 'assistance', 'to', 'a', 'friend', 'or', 'family', 'member', 'who', 'has', 'a', 'health', 'problem', 'or', 'disability'))
+Q156 <- tolower(c('Have', 'you', 'ever', 'used', 'an', 'ecigarette', 'or', 'other', 'electronic', 'vaping', 'product', 'even', 'just', 'one', 'time,', 'in', 'your', 'entire', 'life'))
+Q157 <- tolower(c('Do', 'you', 'now', 'use', 'ecigarettes', 'or', 'other', 'electronic', 'vaping', 'products', 'every', 'day', 'some', 'days', 'or', 'not', 'at', 'all'))
+Q158 <- tolower(c('During', 'the', 'past', '30', 'days', 'on', 'how', 'many', 'days', 'did', 'you', 'use', 'marijuana', 'or', 'cannabis'))
+Q159 <- tolower(c('During', 'the', 'past', '30', 'days', 'which', 'one', 'of', 'the', 'following', 'ways', 'did', 'you', 'use', 'marijuana', 'the', 'most', 'often', 'Did', 'you', 'usually'))
+Q160 <- tolower(c('When', 'you', 'used', 'marijuana', 'or', 'cannabis', 'during', 'the', 'past', '30', 'days', 'was', 'it', 'usually'))
+Q161 <- tolower(c('How', 'old', 'were', 'you', 'when', 'you', 'first', 'started', 'to', 'smoke', 'cigarettes', 'regularly'))
+Q162 <- tolower(c('How', 'old', 'were', 'you', 'when', 'you', 'last', 'smoked', 'cigarettes', 'regularly'))
+Q163 <- tolower(c('On', 'average', 'when', 'you', 'smoke', 'smoked', 'regularly', 'about', 'how', 'many', 'cigarettes', 'do', 'did', 'you', 'usually', 'smoke', 'each', 'day'))
+Q164 <- tolower(c('In', 'the', 'last', '12', 'months,', 'did', 'you', 'have', 'a', 'CT', 'or', 'CAT', 'scan'))
+Q165 <- tolower(c('How', 'many', 'different', 'types', 'of', 'cancer', 'have', 'you', 'had'))
+Q166 <- tolower(c('At', 'what', 'age', 'were', 'you', 'told', 'that', 'you', 'had', 'cancer', 'At', 'what', 'age', 'was', 'your', 'first', 'diagnosis', 'of', 'cancer'))
+Q167 <- tolower(c('What', 'type', 'of', 'cancer', 'was', 'it', 'With', 'your', 'most', 'recent', 'diagnoses', 'of', 'cancer', 'what', 'type', 'of', 'cancer', 'was', 'it'))
+Q168 <- tolower(c('Are', 'you', 'currently', 'receiving', 'treatment', 'for', 'cancer'))
+Q169 <- tolower(c('What', 'type', 'of', 'doctor', 'provides', 'the', 'majority', 'of', 'your', 'health', 'care'))
+Q170 <- tolower(c('Did', 'any', 'doctor', 'nurse', 'or', 'other', 'health', 'professional', 'ever', 'give', 'you', 'a', 'written', 'summary', 'of', 'all', 'the', 'cancer', 'treatments', 'that', 'you', 'received'))
+Q171 <- tolower(c('Have', 'you', 'ever', 'received', 'instructions', 'from', 'a', 'doctor', 'nurse', 'or', 'other', 'health', 'professional', 'about', 'where', 'you', 'should', 'return', 'or', 'who', 'you', 'should', 'see', 'for', 'routine', 'cancer', 'check', 'ups', 'after', 'completing', 'treatment', 'for', 'cancer'))
+Q172 <- tolower(c('Were', 'these', 'instructions', 'written', 'down', 'or', 'printed', 'on', 'paper', 'for', 'you'))
+Q173 <- tolower(c('With', 'your', 'most', 'recent', 'diagnosis', 'of', 'cancer', 'did', 'you', 'have', 'health', 'insurance', 'that', 'paid', 'for', 'all', 'or', 'part', 'of', 'your', 'cancer', 'treatment'))
+Q174 <- tolower(c('Were', 'you', 'ever', 'denied', 'health', 'insurance', 'or', 'life', 'insurance', 'coverage', 'because', 'of', 'your', 'cancer'))
+Q175 <- tolower(c('Did', 'you', 'participate', 'in', 'a', 'clinical', 'trial', 'as', 'part', 'of', 'your', 'cancer', 'treatment'))
+Q176 <- tolower(c('Do', 'you', 'currently', 'have', 'physical', 'pain', 'caused', 'by', 'your', 'cancer', 'or', 'cancer', 'treatment'))
+Q177 <- tolower(c('Would', 'you', 'say', 'your', 'pain', 'is', 'currently', 'under', 'control'))
+Q178 <- tolower(c('Which', 'of', 'the', 'following', 'best', 'describes', 'the', 'decision', 'to', 'have', 'the', 'PSA', 'test', 'done'))
+Q179 <- tolower(c('Who', 'made', 'the', 'decision', 'with', 'you'))
+Q180 <- tolower(c('Have', 'you', 'ever', 'had', 'an', 'HPV', 'vaccination'))
+Q181 <- tolower(c('How', 'many', 'HPV', 'shots', 'did', 'you', 'receive'))
+Q182 <- tolower(c('Have', 'you', 'received', 'a', 'tetanus', 'shot', 'in', 'the', 'past', '10', 'years', 'Was', 'this', 'Tdap', 'the', 'tetanus', 'shot', 'that', 'also', 'has', 'pertussis', 'or', 'whooping', 'cough', 'vaccine'))
+Q183 <- tolower(c('At', 'what', 'kind', 'of', 'place', 'did', 'you', 'get', 'your', 'last', 'flu', 'shot', 'or', 'vaccine'))
+Q184 <- tolower(c('What', 'was', 'your', 'sex', 'at', 'birth', 'Was', 'it', 'male', 'or', 'female'))
+Q185 <- tolower(c('Which', 'of', 'the', 'following', 'best', 'represents', 'how', 'you', 'think', 'of', 'yourself'))
+Q186 <- tolower(c('Which', 'of', 'the', 'following', 'best', 'represents', 'how', 'you', 'think', 'of', 'yourself'))
+Q187 <- tolower(c('Do', 'you', 'consider', 'yourself', 'to', 'be', 'transgender', 'Do', 'you', 'consider', 'yourself', 'to', 'be', 'male', 'to', 'female', 'female', 'to', 'male', 'or', 'gender', 'non', 'conforming'))
+Q188 <- tolower(c('Did', 'you', 'live', 'with', 'anyone', 'who', 'was', 'depressed', 'mentally', 'ill', 'or', 'suicidal'))
+Q189 <- tolower(c('Did', 'you', 'live', 'with', 'anyone', 'who', 'was', 'a', 'problem', 'drinker', 'or', 'alcoholic'))
+Q190 <- tolower(c('Did', 'you', 'live', 'with', 'anyone', 'who', 'used', 'illegal', 'street', 'drugs', 'or', 'who', 'abused', 'prescription', 'medications'))
+Q191 <- tolower(c('Did', 'you', 'live', 'with', 'anyone', 'who', 'served', 'time', 'or', 'was', 'sentenced', 'to', 'serve', 'time', 'in', 'a', 'prison', 'jail', 'or', 'other', 'correctional', 'facility'))
+Q192 <- tolower(c('Were', 'your', 'parents', 'separated', 'or', 'divorced'))
+Q193 <- tolower(c('How', 'often', 'did', 'your', 'parents', 'or', 'adults', 'in', 'your', 'home', 'ever', 'slap', 'hit', 'kick', 'punch', 'or', 'beat', 'each', 'other', 'up'))
+Q194 <- tolower(c('Not', 'including', 'spanking', 'before', 'age', '18', 'how', 'often', 'did', 'a', 'parent', 'or', 'adult', 'in', 'your', 'home', 'ever', 'hit', 'beat', 'kick', 'or', 'physically', 'hurt', 'you', 'in', 'any', 'way', 'Was', 'it'))
+Q195 <- tolower(c('How', 'often', 'did', 'a', 'parent', 'or', 'adult', 'in', 'your', 'home', 'ever', 'swear', 'at', 'you', 'insult', 'you', 'or', 'put', 'you', 'down'))
+Q196 <- tolower(c('How', 'often', 'did', 'anyone', 'at', 'least', '5', 'years', 'older', 'than', 'you', 'or', 'an', 'adult', 'ever', 'touch', 'you', 'sexually'))
+Q197 <- tolower(c('How', 'often', 'did', 'anyone', 'at', 'least', '5', 'years', 'older', 'than', 'you', 'or', 'an', 'adult', 'try', 'to', 'make', 'you', 'touch', 'them', 'sexually'))
+Q198 <- tolower(c('How', 'often', 'did', 'anyone', 'at', 'least', '5', 'years', 'older', 'than', 'you', 'or', 'an', 'adult', 'force', 'you', 'to', 'have', 'sex'))
+Q199 <- tolower(c('Is', 'the', 'child', 'a', 'boy', 'or', 'a', 'girl'))
+Q200 <- tolower(c('How', 'are', 'you', 'related', 'to', 'the', 'child'))
+Q201 <- tolower(c('Has', 'a', 'doctor', 'nurse', 'or', 'other', 'health', 'professional', 'EVER', 'said', 'that', 'the', 'child', 'has', 'asthma')) 
+Q202 <- tolower(c('Does', 'the', 'child', 'still', 'have', 'asthma'))
+Q203 <- tolower(c('Questionnaire', 'Version', 'Identifier'))
+Q204 <- tolower(c('Language', 'identifier'))
+Q205 <- tolower(c('Metropolitan', 'Status'))
+Q206 <- tolower(c('Urban', 'Rural', 'Status'))
+Q207 <- tolower(c('Metropolitan', 'Status', 'Code'))
+Q208 <- tolower(c('Sample', 'Design', 'Stratification', 'Variable'))
+Q209 <- tolower(c('Stratum', 'weight'))
+Q210 <- tolower(c('Raw', 'weighting', 'factor', 'used', 'in', 'raking'))
+Q211 <- tolower(c('Design', 'weight', 'used', 'in', 'raking'))
+Q212 <- tolower(c('Imputed', 'race', 'ethnicity', 'value'))
+Q213 <- tolower(c('Child', 'Hispanic', 'Latino', 'Latina', 'or', 'Spanish', 'origin', 'calculated', 'variable'))
+Q214 <- tolower(c('Child', 'multiracial', 'race', 'categorization'))
+Q215 <- tolower(c('Preferred', 'Child', 'Race', 'Categories'))
+Q216 <- tolower(c('Final', 'child', 'weight', 'Land', 'line', 'and', 'Cell', 'Phone', 'data'))
+Q217 <- tolower(c('Dual', 'Phone', 'Use', 'Categories'))
+Q218 <- tolower(c('Dual', 'phone', 'use', 'correction', 'factor'))
+Q219 <- tolower(c('Truncated', 'design', 'weight', 'used', 'in', 'adult', 'combined', 'land', 'line', 'and', 'cell', 'phone', 'raking'))
+Q220 <- tolower(c('Final', 'weight', 'assigned', 'to', 'each', 'respondent', 'Land', 'line', 'and', 'cell', 'phone', 'data'))
+Q221 <- tolower(c('Adults', 'with', 'good', 'or', 'better', 'health'))
+Q222 <- tolower(c('3', 'level', 'not', 'good', 'physical', 'health', 'status', '0', 'days', '1', '13', 'days', '14', '30', 'days'))
+Q223 <- tolower(c('3', 'level', 'not', 'good', 'mental', 'health', 'status', '0', 'days', '1', '13', 'days', '14', '30', 'days'))
+Q224 <- tolower(c('Respondents', 'aged', '18', '64', 'who', 'have', 'any', 'form', 'of', 'health', 'care', 'coverage'))
+Q225 <- tolower(c('Adults', 'who', 'reported', 'doing', 'physical', 'activity', 'or', 'exercise', 'during', 'the', 'past', '30', 'days', 'other', 'than', 'their', 'regular', 'job'))
+Q226 <- tolower(c('Respondents', 'that', 'have', 'ever', 'reported', 'having', 'coronary', 'heart', 'disease', 'CHD', 'or', 'myocardial', 'infarction', 'MI'))
+Q227 <- tolower(c('Adults', 'who', 'have', 'ever', 'been', 'told', 'they', 'have', 'asthma'))
+Q228 <- tolower(c('Adults', 'who', 'have', 'been', 'told', 'they', 'currently', 'have', 'asthma'))
+Q229 <- tolower(c('Computed', 'asthma', 'status'))
+Q230 <- tolower(c('Respondents', 'who', 'have', 'had', 'a', 'doctor', 'diagnose', 'them', 'as', 'having', 'some', 'form', 'of', 'arthritis'))
+Q231 <- tolower(c('Adults', 'aged', '18', 'who', 'have', 'had', 'permanent', 'teeth', 'extracted'))
+Q232 <- tolower(c('Adults', 'aged', '65', 'who', 'have', 'had', 'all', 'their', 'natural', 'teeth', 'extracted'))
+Q233 <- tolower(c('Adults', 'who', 'have', 'visited', 'a', 'dentist', 'dental', 'hygenist', 'or', 'dental', 'clinic', 'within', 'the', 'past', 'year'))
+Q234 <- tolower(c('Preferred', 'race', 'category'))
+Q235 <- tolower(c('Calculated', 'multiracial', 'race', 'categorization'))
+Q236 <- tolower(c('Hispanic', 'Latino', 'Latina', 'or', 'Spanish', 'origin', 'calculated', 'variable'))
+Q237 <- tolower(c('Race', 'ethnicity', 'categories'))
+Q238 <- tolower(c('White', 'non', 'Hispanic', 'race', 'group'))
+Q239 <- tolower(c('Five', 'level', 'race', 'ethnicity', 'category'))
+Q240 <- tolower(c('Computed', 'race', 'groups', 'used', 'for', 'internet', 'prevalence', 'tables'))
+Q241 <- tolower(c('Calculated', 'sex', 'variable'))
+Q242 <- tolower(c('Fourteen', 'level', 'age', 'category'))
+Q243 <- tolower(c('Two', 'level', 'age', 'category'))
+Q244 <- tolower(c('Imputed', 'Age', 'value', 'collapsed', 'above', '80'))
+Q245 <- tolower(c('Six', 'level', 'imputed', 'age', 'category'))
+Q246 <- tolower(c('Reported', 'height', 'in', 'inches'))
+Q247 <- tolower(c('Reported', 'height', 'in', 'meters'))
+Q248 <- tolower(c('Reported', 'weight', 'in', 'kilograms'))
+Q249 <- tolower(c('Body', 'Mass', 'Index', 'BMI'))
+Q250 <- tolower(c('Four', 'categories', 'of', 'Body', 'Mass', 'Index', 'BMI'))
+Q251 <- tolower(c('Adults', 'who', 'have', 'a', 'body', 'mass', 'index', 'greater', 'than', '25', 'Overweight', 'or', 'Obese'))
+Q252 <- tolower(c('Number', 'of', 'children', 'in', 'household'))
+Q253 <- tolower(c('Level', 'of', 'education', 'completed'))
+Q254 <- tolower(c('Income', 'categories'))
+Q255 <- tolower(c('Four', 'level', 'smoker', 'status', 'Everyday', 'smoker', 'Someday', 'smoker', 'Former', 'smoker', 'Non', 'smoker'))
+Q256 <- tolower(c('Adults', 'who', 'are', 'current', 'smokers'))
+Q257 <- tolower(c('Adults', 'who', 'reported', 'having', 'had', 'at', 'least', 'one', 'drink', 'of', 'alcohol', 'in', 'the', 'past', '30', 'days'))
+Q258 <- tolower(c('Drink', 'occasions', 'per', 'day'))
+Q259 <- tolower(c('Binge', 'drinkers', 'males', 'having', 'five', 'or', 'more', 'drinks', 'on', 'one', 'occasion', 'females', 'having', 'four', 'or', 'more', 'drinks', 'on', 'one', 'occasion'))
+Q260 <- tolower(c('Calculated', 'total', 'number', 'of', 'alcoholic', 'beverages', 'consumed', 'per', 'week'))
+Q261 <- tolower(c('Heavy', 'drinkers', 'adult', 'men', 'having', 'more', 'than', '14', 'drinks', 'per', 'week', 'and', 'adult', 'women', 'having', 'more', 'than', '7', 'drinks', 'per', 'week'))
+Q262 <- tolower(c('Adults', 'aged', '65', 'who', 'have', 'had', 'a', 'flu', 'shot', 'within', 'the', 'past', 'year'))
+Q263 <- tolower(c('Adults', 'aged', '65', 'who', 'have', 'ever', 'had', 'a', 'pneumonia', 'vaccination'))
+Q264 <- tolower(c('Always', 'or', 'Nearly', 'Always', 'Wear', 'Seat', 'Belts', 'Calculated', 'Variable'))
+Q265 <- tolower(c('Always', 'Wear', 'Seat', 'Belts', 'Calculated', 'Variable'))
+Q266 <- tolower(c('Drinking', 'and', 'Driving', 'Reported', 'having', 'driven', 'at', 'least', 'once', 'when', 'perhaps', 'had', 'too', 'much', 'to', 'drink'))
+Q267 <- tolower(c('Women', 'respondents', 'aged', '40', 'who', 'have', 'had', 'a', 'mammogram', 'in', 'the', 'past', 'two', 'years'))
+Q268 <- tolower(c('Women', 'respondents', 'aged', '50', '74', 'who', 'have', 'had', 'a', 'mammogram', 'in', 'the', 'past', 'two', 'years'))
+Q269 <- tolower(c('Women', 'respondents', 'aged', '21', '65', 'who', 'have', 'had', 'a', 'pap', 'test', 'in', 'the', 'past', 'three', 'years'))
+Q270 <- tolower(c('Male', 'respondents', 'aged', '40', 'who', 'have', 'had', 'a', 'PSA', 'test', 'in', 'the', 'past', '2', 'years'))
+Q271 <- tolower(c('Respondents', 'aged', '50', '75', 'who', 'have', 'had', 'a', 'colonoscopy', 'within', 'the', 'past', 'ten', 'years'))
+Q272 <- tolower(c('Respondents', 'aged', '50', '75', 'who', 'have', 'had', 'a', 'sigmoidoscopy', 'within', 'the', 'past', 'five', 'years'))
+Q273 <- tolower(c('Respondents', 'aged', '50', '75', 'who', 'have', 'had', 'a', 'sigmoidoscopy', 'within', 'the', 'past', 'ten', 'years'))
+Q274 <- tolower(c('Respondents', 'aged', '50', '75', 'who', 'have', 'had', 'a', 'blood', 'stool', 'test', 'within', 'the', 'past', 'year'))
+Q275 <- tolower(c('Respondents', 'aged', '50', '75', 'who', 'have', 'had', 'a', 'stool', 'DNA', 'test', 'within', 'the', 'past', 'three', 'years'))
+Q276 <- tolower(c('Respondents', 'aged', '50', '75', 'who', 'have', 'had', 'a', 'virtual', 'colonoscopy', 'within', 'the', 'past', 'five', 'years'))
+Q277 <- tolower(c('Respondents', 'aged', '50', '75', 'who', 'have', 'had', 'a', 'sigmoidoscopy', 'within', 'the', 'past', 'ten', 'years', 'and', 'a', 'blood', 'stool', 'test', 'in', 'the', 'past', 'year'))
+Q278 <- tolower(c('Respondents', 'aged', '50', '75', 'who', 'have', 'fully', 'met', 'the', 'USPSTF', 'recommendations'))
+Q279 <- tolower(c('Adults', 'who', 'have', 'ever', 'been', 'tested', 'for', 'HIV'))
+
 
 
 WHO_Q1 <- WHO_words %>% filter(word %in% Q1) %>% select(-total) %>% arrange(desc(tf_idf)) 
@@ -838,7 +878,45 @@ WHO_Q237 <- WHO_words %>% filter(word %in% Q237) %>% select(-total) %>% arrange(
 WHO_Q238 <- WHO_words %>% filter(word %in% Q238) %>% select(-total) %>% arrange(desc(tf_idf)) 
 WHO_Q239 <- WHO_words %>% filter(word %in% Q239) %>% select(-total) %>% arrange(desc(tf_idf)) 
 WHO_Q240 <- WHO_words %>% filter(word %in% Q240) %>% select(-total) %>% arrange(desc(tf_idf)) 
- 
+WHO_Q241 <- WHO_words %>% filter(word %in% Q241) %>% select(-total) %>% arrange(desc(tf_idf)) 
+WHO_Q242 <- WHO_words %>% filter(word %in% Q242) %>% select(-total) %>% arrange(desc(tf_idf)) 
+WHO_Q243 <- WHO_words %>% filter(word %in% Q243) %>% select(-total) %>% arrange(desc(tf_idf)) 
+WHO_Q244 <- WHO_words %>% filter(word %in% Q244) %>% select(-total) %>% arrange(desc(tf_idf)) 
+WHO_Q245 <- WHO_words %>% filter(word %in% Q245) %>% select(-total) %>% arrange(desc(tf_idf)) 
+WHO_Q246 <- WHO_words %>% filter(word %in% Q246) %>% select(-total) %>% arrange(desc(tf_idf)) 
+WHO_Q247 <- WHO_words %>% filter(word %in% Q247) %>% select(-total) %>% arrange(desc(tf_idf)) 
+WHO_Q248 <- WHO_words %>% filter(word %in% Q248) %>% select(-total) %>% arrange(desc(tf_idf)) 
+WHO_Q249 <- WHO_words %>% filter(word %in% Q249) %>% select(-total) %>% arrange(desc(tf_idf)) 
+WHO_Q250 <- WHO_words %>% filter(word %in% Q250) %>% select(-total) %>% arrange(desc(tf_idf)) 
+WHO_Q251 <- WHO_words %>% filter(word %in% Q251) %>% select(-total) %>% arrange(desc(tf_idf)) 
+WHO_Q252 <- WHO_words %>% filter(word %in% Q252) %>% select(-total) %>% arrange(desc(tf_idf)) 
+WHO_Q253 <- WHO_words %>% filter(word %in% Q253) %>% select(-total) %>% arrange(desc(tf_idf)) 
+WHO_Q254 <- WHO_words %>% filter(word %in% Q254) %>% select(-total) %>% arrange(desc(tf_idf)) 
+WHO_Q255 <- WHO_words %>% filter(word %in% Q255) %>% select(-total) %>% arrange(desc(tf_idf)) 
+WHO_Q256 <- WHO_words %>% filter(word %in% Q256) %>% select(-total) %>% arrange(desc(tf_idf)) 
+WHO_Q257 <- WHO_words %>% filter(word %in% Q257) %>% select(-total) %>% arrange(desc(tf_idf)) 
+WHO_Q258 <- WHO_words %>% filter(word %in% Q258) %>% select(-total) %>% arrange(desc(tf_idf)) 
+WHO_Q259 <- WHO_words %>% filter(word %in% Q259) %>% select(-total) %>% arrange(desc(tf_idf)) 
+WHO_Q260 <- WHO_words %>% filter(word %in% Q260) %>% select(-total) %>% arrange(desc(tf_idf)) 
+WHO_Q261 <- WHO_words %>% filter(word %in% Q261) %>% select(-total) %>% arrange(desc(tf_idf)) 
+WHO_Q262 <- WHO_words %>% filter(word %in% Q262) %>% select(-total) %>% arrange(desc(tf_idf)) 
+WHO_Q263 <- WHO_words %>% filter(word %in% Q263) %>% select(-total) %>% arrange(desc(tf_idf)) 
+WHO_Q264 <- WHO_words %>% filter(word %in% Q264) %>% select(-total) %>% arrange(desc(tf_idf)) 
+WHO_Q265 <- WHO_words %>% filter(word %in% Q265) %>% select(-total) %>% arrange(desc(tf_idf)) 
+WHO_Q266 <- WHO_words %>% filter(word %in% Q266) %>% select(-total) %>% arrange(desc(tf_idf)) 
+WHO_Q267 <- WHO_words %>% filter(word %in% Q267) %>% select(-total) %>% arrange(desc(tf_idf)) 
+WHO_Q268 <- WHO_words %>% filter(word %in% Q268) %>% select(-total) %>% arrange(desc(tf_idf)) 
+WHO_Q269 <- WHO_words %>% filter(word %in% Q269) %>% select(-total) %>% arrange(desc(tf_idf)) 
+WHO_Q270 <- WHO_words %>% filter(word %in% Q270) %>% select(-total) %>% arrange(desc(tf_idf)) 
+WHO_Q271 <- WHO_words %>% filter(word %in% Q271) %>% select(-total) %>% arrange(desc(tf_idf)) 
+WHO_Q272 <- WHO_words %>% filter(word %in% Q272) %>% select(-total) %>% arrange(desc(tf_idf)) 
+WHO_Q273 <- WHO_words %>% filter(word %in% Q273) %>% select(-total) %>% arrange(desc(tf_idf)) 
+WHO_Q274 <- WHO_words %>% filter(word %in% Q274) %>% select(-total) %>% arrange(desc(tf_idf)) 
+WHO_Q275 <- WHO_words %>% filter(word %in% Q275) %>% select(-total) %>% arrange(desc(tf_idf)) 
+WHO_Q276 <- WHO_words %>% filter(word %in% Q276) %>% select(-total) %>% arrange(desc(tf_idf)) 
+WHO_Q277 <- WHO_words %>% filter(word %in% Q277) %>% select(-total) %>% arrange(desc(tf_idf)) 
+WHO_Q278 <- WHO_words %>% filter(word %in% Q278) %>% select(-total) %>% arrange(desc(tf_idf)) 
+WHO_Q279 <- WHO_words %>% filter(word %in% Q279) %>% select(-total) %>% arrange(desc(tf_idf)) 
 
 WHO_Q1_SORT <- WHO_Q1[order(-WHO_Q1$n),]
 WHO_Q2_SORT <- WHO_Q2[order(-WHO_Q2$n),]
@@ -1079,60 +1157,108 @@ WHO_Q236_SORT <- WHO_Q236[order(-WHO_Q236$n),]
 WHO_Q237_SORT <- WHO_Q237[order(-WHO_Q237$n),]
 WHO_Q238_SORT <- WHO_Q238[order(-WHO_Q238$n),]
 WHO_Q239_SORT <- WHO_Q239[order(-WHO_Q239$n),]
-WHO_Q240_SORT <- WHO_Q239[order(-WHO_Q240$n),]
+WHO_Q240_SORT <- WHO_Q240[order(-WHO_Q240$n),]
+WHO_Q241_SORT <- WHO_Q241[order(-WHO_Q241$n),]
+WHO_Q242_SORT <- WHO_Q242[order(-WHO_Q242$n),]
+WHO_Q243_SORT <- WHO_Q243[order(-WHO_Q243$n),]
+WHO_Q244_SORT <- WHO_Q244[order(-WHO_Q244$n),]
+WHO_Q245_SORT <- WHO_Q245[order(-WHO_Q245$n),]
+WHO_Q246_SORT <- WHO_Q246[order(-WHO_Q246$n),]
+WHO_Q247_SORT <- WHO_Q247[order(-WHO_Q247$n),]
+WHO_Q248_SORT <- WHO_Q248[order(-WHO_Q248$n),]
+WHO_Q249_SORT <- WHO_Q249[order(-WHO_Q249$n),]
+WHO_Q250_SORT <- WHO_Q250[order(-WHO_Q250$n),]
+WHO_Q251_SORT <- WHO_Q251[order(-WHO_Q251$n),]
+WHO_Q252_SORT <- WHO_Q252[order(-WHO_Q252$n),]
+WHO_Q253_SORT <- WHO_Q253[order(-WHO_Q253$n),]
+WHO_Q254_SORT <- WHO_Q254[order(-WHO_Q254$n),]
+WHO_Q255_SORT <- WHO_Q255[order(-WHO_Q255$n),]
+WHO_Q256_SORT <- WHO_Q256[order(-WHO_Q256$n),]
+WHO_Q257_SORT <- WHO_Q257[order(-WHO_Q257$n),]
+WHO_Q258_SORT <- WHO_Q258[order(-WHO_Q258$n),]
+WHO_Q259_SORT <- WHO_Q259[order(-WHO_Q259$n),]
+WHO_Q260_SORT <- WHO_Q260[order(-WHO_Q260$n),]
+WHO_Q261_SORT <- WHO_Q261[order(-WHO_Q261$n),]
+WHO_Q262_SORT <- WHO_Q262[order(-WHO_Q262$n),]
+WHO_Q263_SORT <- WHO_Q263[order(-WHO_Q263$n),]
+WHO_Q264_SORT <- WHO_Q264[order(-WHO_Q264$n),]
+WHO_Q265_SORT <- WHO_Q265[order(-WHO_Q265$n),]
+WHO_Q266_SORT <- WHO_Q266[order(-WHO_Q266$n),]
+WHO_Q267_SORT <- WHO_Q267[order(-WHO_Q267$n),]
+WHO_Q268_SORT <- WHO_Q268[order(-WHO_Q268$n),]
+WHO_Q269_SORT <- WHO_Q269[order(-WHO_Q269$n),]
+WHO_Q270_SORT <- WHO_Q270[order(-WHO_Q270$n),]
+WHO_Q271_SORT <- WHO_Q271[order(-WHO_Q271$n),]
+WHO_Q272_SORT <- WHO_Q272[order(-WHO_Q272$n),]
+WHO_Q273_SORT <- WHO_Q273[order(-WHO_Q273$n),]
+WHO_Q274_SORT <- WHO_Q274[order(-WHO_Q274$n),]
+WHO_Q275_SORT <- WHO_Q275[order(-WHO_Q275$n),]
+WHO_Q276_SORT <- WHO_Q276[order(-WHO_Q276$n),]
+WHO_Q277_SORT <- WHO_Q277[order(-WHO_Q277$n),]
+WHO_Q278_SORT <- WHO_Q278[order(-WHO_Q278$n),]
+WHO_Q279_SORT <- WHO_Q279[order(-WHO_Q279$n),]
+
+WHO_LIST <- list(WHO_Q1_SORT, WHO_Q2_SORT, WHO_Q3_SORT, WHO_Q4_SORT, WHO_Q5_SORT, WHO_Q6_SORT, WHO_Q7_SORT, WHO_Q8_SORT, WHO_Q9_SORT, WHO_Q10_SORT, WHO_Q11_SORT, WHO_Q12_SORT, WHO_Q13_SORT, WHO_Q14_SORT, WHO_Q15_SORT, WHO_Q16_SORT, WHO_Q17_SORT, WHO_Q18_SORT, WHO_Q19_SORT, WHO_Q20_SORT, WHO_Q21_SORT, WHO_Q22_SORT, WHO_Q23_SORT, WHO_Q24_SORT, WHO_Q25_SORT, WHO_Q26_SORT, WHO_Q27_SORT, WHO_Q28_SORT, WHO_Q29_SORT, WHO_Q30_SORT, WHO_Q31_SORT, WHO_Q32_SORT, WHO_Q33_SORT, WHO_Q34_SORT, WHO_Q35_SORT, WHO_Q36_SORT, WHO_Q37_SORT, WHO_Q38_SORT, WHO_Q39_SORT, WHO_Q40_SORT, WHO_Q41_SORT, WHO_Q42_SORT, WHO_Q43_SORT, WHO_Q44_SORT, WHO_Q45_SORT, WHO_Q46_SORT, WHO_Q47_SORT, WHO_Q48_SORT, WHO_Q49_SORT, WHO_Q50_SORT, WHO_Q51_SORT, WHO_Q52_SORT, WHO_Q53_SORT, WHO_Q54_SORT, WHO_Q55_SORT, WHO_Q56_SORT, WHO_Q57_SORT, WHO_Q58_SORT, WHO_Q59_SORT, WHO_Q60_SORT, WHO_Q61_SORT, WHO_Q62_SORT, WHO_Q63_SORT, WHO_Q64_SORT, WHO_Q65_SORT, WHO_Q66_SORT, WHO_Q67_SORT, WHO_Q68_SORT, WHO_Q69_SORT, WHO_Q70_SORT, WHO_Q71_SORT, WHO_Q72_SORT, WHO_Q73_SORT, WHO_Q74_SORT, WHO_Q75_SORT, WHO_Q76_SORT, WHO_Q77_SORT, WHO_Q78_SORT, WHO_Q79_SORT, WHO_Q80_SORT, WHO_Q81_SORT, WHO_Q82_SORT, WHO_Q83_SORT, WHO_Q84_SORT, WHO_Q85_SORT, WHO_Q86_SORT, WHO_Q87_SORT, WHO_Q88_SORT, WHO_Q89_SORT, WHO_Q90_SORT, WHO_Q91_SORT, WHO_Q92_SORT, WHO_Q93_SORT, WHO_Q94_SORT, WHO_Q95_SORT, WHO_Q96_SORT, WHO_Q97_SORT, WHO_Q98_SORT, WHO_Q99_SORT, WHO_Q100_SORT, WHO_Q101_SORT, WHO_Q102_SORT, WHO_Q103_SORT, WHO_Q104_SORT, WHO_Q105_SORT, WHO_Q106_SORT, WHO_Q107_SORT, WHO_Q108_SORT, WHO_Q109_SORT, WHO_Q110_SORT, WHO_Q111_SORT, WHO_Q112_SORT, WHO_Q113_SORT, WHO_Q114_SORT, WHO_Q115_SORT, WHO_Q116_SORT, WHO_Q117_SORT, WHO_Q118_SORT, WHO_Q119_SORT, WHO_Q120_SORT, WHO_Q121_SORT, WHO_Q122_SORT, WHO_Q123_SORT, WHO_Q124_SORT, WHO_Q125_SORT, WHO_Q126_SORT, WHO_Q127_SORT, WHO_Q128_SORT, WHO_Q129_SORT, WHO_Q130_SORT, WHO_Q131_SORT, WHO_Q132_SORT, WHO_Q133_SORT, WHO_Q134_SORT, WHO_Q135_SORT, WHO_Q136_SORT, WHO_Q137_SORT, WHO_Q138_SORT, WHO_Q139_SORT, WHO_Q140_SORT, WHO_Q141_SORT, WHO_Q142_SORT, WHO_Q143_SORT, WHO_Q144_SORT, WHO_Q145_SORT, WHO_Q146_SORT, WHO_Q147_SORT, WHO_Q148_SORT, WHO_Q149_SORT, WHO_Q150_SORT, WHO_Q151_SORT, WHO_Q152_SORT, WHO_Q153_SORT, WHO_Q154_SORT, WHO_Q155_SORT, WHO_Q156_SORT, WHO_Q157_SORT, WHO_Q158_SORT, WHO_Q159_SORT, WHO_Q160_SORT, WHO_Q161_SORT, WHO_Q162_SORT, WHO_Q163_SORT, WHO_Q164_SORT, WHO_Q165_SORT, WHO_Q166_SORT, WHO_Q167_SORT, WHO_Q168_SORT, WHO_Q169_SORT, WHO_Q170_SORT, WHO_Q171_SORT, WHO_Q172_SORT, WHO_Q173_SORT, WHO_Q174_SORT, WHO_Q175_SORT, WHO_Q176_SORT, WHO_Q177_SORT, WHO_Q178_SORT, WHO_Q179_SORT, WHO_Q180_SORT, WHO_Q181_SORT, WHO_Q182_SORT, WHO_Q183_SORT, WHO_Q184_SORT, WHO_Q185_SORT, WHO_Q186_SORT, WHO_Q187_SORT, WHO_Q188_SORT, WHO_Q189_SORT, WHO_Q190_SORT, WHO_Q191_SORT, WHO_Q192_SORT, WHO_Q193_SORT, WHO_Q194_SORT, WHO_Q195_SORT, WHO_Q196_SORT, WHO_Q197_SORT, WHO_Q198_SORT, WHO_Q199_SORT, WHO_Q200_SORT, WHO_Q201_SORT, WHO_Q202_SORT, WHO_Q203_SORT, WHO_Q204_SORT, WHO_Q205_SORT, WHO_Q206_SORT, WHO_Q207_SORT, WHO_Q208_SORT, WHO_Q209_SORT, WHO_Q210_SORT, WHO_Q211_SORT, WHO_Q212_SORT, WHO_Q213_SORT, WHO_Q214_SORT, WHO_Q215_SORT, WHO_Q216_SORT, WHO_Q217_SORT, WHO_Q218_SORT, WHO_Q219_SORT, WHO_Q220_SORT, WHO_Q221_SORT, WHO_Q222_SORT, WHO_Q223_SORT, WHO_Q224_SORT, WHO_Q225_SORT, WHO_Q226_SORT, WHO_Q227_SORT, WHO_Q228_SORT, WHO_Q229_SORT, WHO_Q230_SORT, WHO_Q231_SORT, WHO_Q232_SORT, WHO_Q233_SORT, WHO_Q234_SORT, WHO_Q235_SORT, WHO_Q236_SORT, WHO_Q237_SORT, WHO_Q238_SORT, WHO_Q239_SORT, WHO_Q240_SORT, WHO_Q241_SORT, WHO_Q242_SORT, WHO_Q243_SORT, WHO_Q244_SORT, WHO_Q245_SORT, WHO_Q246_SORT, WHO_Q247_SORT, WHO_Q248_SORT, WHO_Q249_SORT, WHO_Q250_SORT, WHO_Q251_SORT, WHO_Q252_SORT, WHO_Q253_SORT, WHO_Q254_SORT, WHO_Q255_SORT, WHO_Q256_SORT, WHO_Q257_SORT, WHO_Q258_SORT, WHO_Q259_SORT, WHO_Q260_SORT, WHO_Q261_SORT, WHO_Q262_SORT, WHO_Q263_SORT, WHO_Q264_SORT, WHO_Q265_SORT, WHO_Q266_SORT, WHO_Q267_SORT, WHO_Q268_SORT, WHO_Q269_SORT, WHO_Q270_SORT, WHO_Q271_SORT, WHO_Q272_SORT, WHO_Q273_SORT, WHO_Q274_SORT, WHO_Q275_SORT, WHO_Q276_SORT, WHO_Q277_SORT, WHO_Q278_SORT, WHO_Q279_SORT)
 
 
-WHO_LIST <- list(WHO_Q1_SORT, WHO_Q2_SORT, WHO_Q3_SORT, WHO_Q4_SORT, WHO_Q5_SORT, WHO_Q6_SORT, WHO_Q7_SORT, WHO_Q8_SORT, WHO_Q9_SORT, WHO_Q10_SORT, WHO_Q11_SORT, WHO_Q12_SORT, WHO_Q13_SORT, WHO_Q14_SORT, WHO_Q15_SORT, WHO_Q16_SORT, WHO_Q17_SORT, WHO_Q18_SORT, WHO_Q19_SORT, WHO_Q20_SORT, WHO_Q21_SORT, WHO_Q22_SORT, WHO_Q23_SORT, WHO_Q24_SORT, WHO_Q25_SORT, WHO_Q26_SORT, WHO_Q27_SORT, WHO_Q28_SORT, WHO_Q29_SORT, WHO_Q30_SORT, WHO_Q31_SORT, WHO_Q32_SORT, WHO_Q33_SORT, WHO_Q34_SORT, WHO_Q35_SORT, WHO_Q36_SORT, WHO_Q37_SORT, WHO_Q38_SORT, WHO_Q39_SORT, WHO_Q40_SORT, WHO_Q41_SORT, WHO_Q42_SORT, WHO_Q43_SORT, WHO_Q44_SORT, WHO_Q45_SORT, WHO_Q46_SORT, WHO_Q47_SORT, WHO_Q48_SORT, WHO_Q49_SORT, WHO_Q50_SORT, WHO_Q51_SORT, WHO_Q52_SORT, WHO_Q53_SORT, WHO_Q54_SORT, WHO_Q55_SORT, WHO_Q56_SORT, WHO_Q57_SORT, WHO_Q58_SORT, WHO_Q59_SORT, WHO_Q60_SORT, WHO_Q61_SORT, WHO_Q62_SORT, WHO_Q63_SORT, WHO_Q64_SORT, WHO_Q65_SORT, WHO_Q66_SORT, WHO_Q67_SORT, WHO_Q68_SORT, WHO_Q69_SORT, WHO_Q70_SORT, WHO_Q71_SORT, WHO_Q72_SORT, WHO_Q73_SORT, WHO_Q74_SORT, WHO_Q75_SORT, WHO_Q76_SORT, WHO_Q77_SORT, WHO_Q78_SORT, WHO_Q79_SORT, WHO_Q80_SORT, WHO_Q81_SORT, WHO_Q82_SORT, WHO_Q83_SORT, WHO_Q84_SORT, WHO_Q85_SORT, WHO_Q86_SORT, WHO_Q87_SORT, WHO_Q88_SORT, WHO_Q89_SORT, WHO_Q90_SORT, WHO_Q91_SORT, WHO_Q92_SORT, WHO_Q93_SORT, WHO_Q94_SORT, WHO_Q95_SORT, WHO_Q96_SORT, WHO_Q97_SORT, WHO_Q98_SORT, WHO_Q99_SORT, WHO_Q100_SORT, WHO_Q101_SORT, WHO_Q102_SORT, WHO_Q103_SORT, WHO_Q104_SORT, WHO_Q105_SORT, WHO_Q106_SORT, WHO_Q107_SORT, WHO_Q108_SORT, WHO_Q109_SORT, WHO_Q110_SORT, WHO_Q111_SORT, WHO_Q112_SORT, WHO_Q113_SORT, WHO_Q114_SORT, WHO_Q115_SORT, WHO_Q116_SORT, WHO_Q117_SORT, WHO_Q118_SORT, WHO_Q119_SORT, WHO_Q120_SORT, WHO_Q121_SORT, WHO_Q122_SORT, WHO_Q123_SORT, WHO_Q124_SORT, WHO_Q125_SORT, WHO_Q126_SORT, WHO_Q127_SORT, WHO_Q128_SORT, WHO_Q129_SORT, WHO_Q130_SORT, WHO_Q131_SORT, WHO_Q132_SORT, WHO_Q133_SORT, WHO_Q134_SORT, WHO_Q135_SORT, WHO_Q136_SORT, WHO_Q137_SORT, WHO_Q138_SORT, WHO_Q139_SORT, WHO_Q140_SORT, WHO_Q141_SORT, WHO_Q142_SORT, WHO_Q143_SORT, WHO_Q144_SORT, WHO_Q145_SORT, WHO_Q146_SORT, WHO_Q147_SORT, WHO_Q148_SORT, WHO_Q149_SORT, WHO_Q150_SORT, WHO_Q151_SORT, WHO_Q152_SORT, WHO_Q153_SORT, WHO_Q154_SORT, WHO_Q155_SORT, WHO_Q156_SORT, WHO_Q157_SORT, WHO_Q158_SORT, WHO_Q159_SORT, WHO_Q160_SORT, WHO_Q161_SORT, WHO_Q162_SORT, WHO_Q163_SORT, WHO_Q164_SORT, WHO_Q165_SORT, WHO_Q166_SORT, WHO_Q167_SORT, WHO_Q168_SORT, WHO_Q169_SORT, WHO_Q170_SORT, WHO_Q171_SORT, WHO_Q172_SORT, WHO_Q173_SORT, WHO_Q174_SORT, WHO_Q175_SORT, WHO_Q176_SORT, WHO_Q177_SORT, WHO_Q178_SORT, WHO_Q179_SORT, WHO_Q180_SORT, WHO_Q181_SORT, WHO_Q182_SORT, WHO_Q183_SORT, WHO_Q184_SORT, WHO_Q185_SORT, WHO_Q186_SORT, WHO_Q187_SORT, WHO_Q188_SORT, WHO_Q189_SORT, WHO_Q190_SORT, WHO_Q191_SORT, WHO_Q192_SORT, WHO_Q193_SORT, WHO_Q194_SORT, WHO_Q195_SORT, WHO_Q196_SORT, WHO_Q197_SORT, WHO_Q198_SORT, WHO_Q199_SORT, WHO_Q200_SORT, WHO_Q201_SORT, WHO_Q202_SORT, WHO_Q203_SORT, WHO_Q204_SORT, WHO_Q205_SORT, WHO_Q206_SORT, WHO_Q207_SORT, WHO_Q208_SORT, WHO_Q209_SORT, WHO_Q210_SORT, WHO_Q211_SORT, WHO_Q212_SORT, WHO_Q213_SORT, WHO_Q214_SORT, WHO_Q215_SORT, WHO_Q216_SORT, WHO_Q217_SORT, WHO_Q218_SORT, WHO_Q219_SORT, WHO_Q220_SORT, WHO_Q221_SORT, WHO_Q222_SORT, WHO_Q223_SORT, WHO_Q224_SORT, WHO_Q225_SORT, WHO_Q226_SORT, WHO_Q227_SORT, WHO_Q228_SORT, WHO_Q229_SORT, WHO_Q230_SORT, WHO_Q231_SORT, WHO_Q232_SORT, WHO_Q233_SORT, WHO_Q234_SORT, WHO_Q235_SORT, WHO_Q236_SORT, WHO_Q237_SORT, WHO_Q238_SORT, WHO_Q239_SORT, WHO_Q240_SORT)
+###create the knowledge graph CSV file - 2-3 hours.
+#csv_fname = "BRFSS_KG.csv"
+#
+#row <- data.frame("Column A", "Column B", "P-Value", "Word Count")
+#write.table(row, file = csv_fname, sep = ",", append = TRUE, quote = FALSE, col.names = FALSE, row.names = FALSE)
+#
+#k=0
+#while(k< length(WHO_LIST)) {
+#k=k+1
+#	j=0
+#	while(j< length(WHO_LIST)) {
+#	j=j+1
+#	#print(j)
+#		i=2
+#		while(i< length(as.data.frame(WHO_LIST[k])$chapter)) {
+#		i=i+1
+#		#print(i)
+#			if (i < length(as.data.frame(WHO_LIST[j])$chapter)) {
+#				suppressWarnings(warning(test <- wilcox.test(head(as.numeric(substr(as.data.frame(WHO_LIST[k])$chapter,4,5)),n=i),head(as.numeric(substr(as.data.frame(WHO_LIST[j])$chapter,4,5)),n=i),paired = TRUE)))
+#				if (!is.na(test$p.value)) {
+#					if (test$p.value < 0.05 && test$p.value > 0) { 
+#						print(paste("COLUMN A : ", as.character(k), "COLUMN B : ", as.character(j), "SIGNIFICANT: ", as.character(test$p.value), "WORD COUNT: ", as.character(i)))
+#						row <- data.frame(as.character(k), as.character(j), as.character(test$p.value), as.character(i))
+#						write.table(row, file = csv_fname, sep = ",", append = TRUE, quote = FALSE, col.names = FALSE, row.names = FALSE)
+#						break;
+#					}
+#				}
+#			}
+#		}
+#	}
+#}
 
 
 
-#create the knowledge graph CSV file - 2-3 hours.
-csv_fname = "BRFSS_KG_2018.csv"
 
-row <- data.frame("Column A", "Column B", "P-Value", "Word Count")
-write.table(row, file = csv_fname, sep = ",", append = TRUE, quote = FALSE, col.names = FALSE, row.names = FALSE)
-
-k=0
-while(k< length(WHO_LIST)) {
-k=k+1
-	j=0
-	while(j< length(WHO_LIST)) {
-	j=j+1
-	#print(j)
-		i=2
-		while(i< length(as.data.frame(WHO_LIST[k])$chapter)) {
-		i=i+1
-		#print(i)
-			if (i < length(as.data.frame(WHO_LIST[j])$chapter)) {
-				suppressWarnings(warning(test <- wilcox.test(head(as.numeric(substr(as.data.frame(WHO_LIST[k])$chapter,4,5)),n=i),head(as.numeric(substr(as.data.frame(WHO_LIST[j])$chapter,4,5)),n=i),paired = TRUE)))
-				if (!is.na(test$p.value)) {
-					if (test$p.value < 0.05 && test$p.value > 0) { 
-						print(paste("COLUMN A : ", as.character(k), "COLUMN B : ", as.character(j), "SIGNIFICANT: ", as.character(test$p.value), "WORD COUNT: ", as.character(i)))
-						row <- data.frame(as.character(k), as.character(j), as.character(test$p.value), as.character(i))
-						write.table(row, file = csv_fname, sep = ",", append = TRUE, quote = FALSE, col.names = FALSE, row.names = FALSE)
-						break;
-					}
-				}
-			}
-		}
-	}
-}
-
-
-
-setwd('C:\\Users\\mdjaw\\OneDrive\\Documents\\Markian Training\\Research_USQ\\USCenterDiseaseControlPrevention\\LLCP2018XPT')
-data <- read.csv('LLCP2018XPT.csv')
+setwd('C:\\Users\\mdjaw\\OneDrive\\Documents\\Markian Training\\Research_USQ\\USCenterDiseaseControlPrevention\\LLCP2020XPT')
+data <- read.csv('LLCP2020XPT.csv')
 state_data <- subset(data, X_STATE == 4 | X_STATE == 9 | X_STATE == 10 | X_STATE == 13 | X_STATE == 15 | X_STATE == 18 | X_STATE == 22 | X_STATE == 25 | X_STATE == 26 | X_STATE == 28 | X_STATE == 29 | X_STATE == 30 | X_STATE == 34 | X_STATE == 35 | X_STATE == 37 | X_STATE == 44 | X_STATE == 46 | X_STATE == 49 | X_STATE == 50 | X_STATE == 51 | X_STATE == 55 | X_STATE == 56 | X_STATE == 66 | X_STATE == 31 | X_STATE == 16 | X_STATE == 19 | X_STATE == 2 | X_STATE == 31 | X_STATE == 1 | X_STATE == 40 | X_STATE == 39) 
 
-state_data[49][state_data[49] == 1] <- 1 
-state_data[49][state_data[49] == 2] <- 1
-state_data[49][state_data[49] == 3] <- 0
-state_data[49][state_data[49] == 4] <- 0
-state_data[49][state_data[49] == 7] <- 0
-state_data[49][state_data[49] == 9] <- 0
-state_data[49][is.na(state_data[49])] <- 0
-state_data[176][is.na(state_data[176])] <- 0
-state_data[176][state_data[176] >= 1] <- 1
+
+state_data[54][state_data[54] == 1] <- 1 
+state_data[54][state_data[54] == 2] <- 1
+state_data[54][state_data[54] == 3] <- 0
+state_data[54][state_data[54] == 4] <- 0
+state_data[54][state_data[54] == 7] <- 0
+state_data[54][state_data[54] == 9] <- 0
+state_data[54][is.na(state_data[54])] <- 0
+state_data[167][is.na(state_data[167])] <- 0
+state_data[167][state_data[167] >= 1] <- 1
+
+
+
+setwd('C:/Users/mdjaw/OneDrive/Documents/Markian Training/Research_USQ/USCenterDiseaseControlPrevention/LLCP2020XPT')
+KG <- read.csv('BRFSS_KG.csv')
+KG$Word.Count <- as.integer(KG$Word.Count)
+KG$Confidence <- (1 - as.numeric(KG$P.Value))
+KG_AGG <- aggregate(KG$Word.Count, by=list(Column.A=KG$Column.A), FUN=sum)
+
 
 fifty_percent <- nrow(state_data)/2
 na_count <- sapply(state_data, function(x) sum(is.na(x)))
@@ -1144,19 +1270,9 @@ extract_col_numbers <- which( colnames(state_data) %in% extract_columns )
 
 ml_missing50 <- state_data[ -c(extract_col_numbers) ]
 
+
 ml_missing50_nona <- na.omit(ml_missing50)
-ml_missing50_nona2 = subset(ml_missing50_nona, select = -c(DLYOTHER,NOCOV121))
-write.csv(ml_missing50_nona2, "LLCP2018XPT_Grounded_ML_nona.csv")
-
-
-
-
-setwd('C:/Users/mdjaw/OneDrive/Documents/Markian Training/Research_USQ/USCenterDiseaseControlPrevention/LLCP2018XPT')
-KG <- read.csv('BRFSS_KG_2018.csv')
-KG$Word.Count <- as.integer(KG$Word.Count)
- 
-KG_AGG <- aggregate(KG$Word.Count, by=list(Column.A=KG$Column.A), FUN=sum)
-
+write.csv(ml_missing50_nona, "LLCP2020XPT_Grounded_ML_nona.csv")
 
 
 KG_AGG_na_omit <- na.omit(KG_AGG)
@@ -1165,17 +1281,15 @@ KG_FS25 <- KG_AGG_na_omit[KG_AGG_na_omit$x > quantile(KG_AGG_na_omit$x,prob=1-n/
 fs_list <- sort(as.numeric(KG_FS25$Column.A))
 fs_list
 
-
 `%!in%` <- Negate(`%in%`)
 
 final_list <- fs_list[fs_list %!in% c(extract_col_numbers)]
 
-final_list <- append(final_list, 49)
-final_list <- append(final_list, 176)
-
+final_list <- append(final_list, 54)
+final_list <- append(final_list, 167)
 
 feature_selection <- state_data[ c(final_list) ] 
-write.csv(na.omit(feature_selection), "LLCP2018XPT_Grounded_KGFS25.csv")
+write.csv(na.omit(feature_selection), "LLCP2020XPT_Grounded_KGFS25.csv")
 
 
 KG_AGG_na_omit <- na.omit(KG_AGG)
@@ -1184,14 +1298,14 @@ KG_FS10 <- KG_AGG_na_omit[KG_AGG_na_omit$x > quantile(KG_AGG_na_omit$x,prob=1-n/
 fs_list <- sort(as.numeric(KG_FS10$Column.A))
 fs_list
 
+
 `%!in%` <- Negate(`%in%`)
 
 final_list <- fs_list[fs_list %!in% c(extract_col_numbers)]
 
-final_list <- append(final_list, 49)
-final_list <- append(final_list, 176)
+final_list <- append(final_list, 54)
+final_list <- append(final_list, 167)
 
 feature_selection <- state_data[ c(final_list) ] 
-write.csv(na.omit(feature_selection), "LLCP2018XPT_Grounded_KGFS10.csv")
+write.csv(na.omit(feature_selection), "LLCP2020XPT_Grounded_KGFS10.csv")
 
-#grep("B", colnames(df))
