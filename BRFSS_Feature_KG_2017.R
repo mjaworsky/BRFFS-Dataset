@@ -1179,6 +1179,7 @@ state_data <- subset(data, X_STATE == 4 | X_STATE == 9 | X_STATE == 10 | X_STATE
 
 
 state_data$DRVISITS[state_data$DRVISITS == "nan"]<-NA
+state_data$NOCOV121[state_data$NOCOV121 == "nan"]<-NA
 state_data$DLYOTHER[state_data$DLYOTHER == ""]<-NA
 
 
@@ -1212,297 +1213,20 @@ write.csv(ml_missing50_nona2, "LLCP2017XPT_Grounded_ML_nona.csv")
 setwd('C:/Users/mdjaw/OneDrive/Documents/Markian Training/Research_USQ/USCenterDiseaseControlPrevention/LLCP2017XPT')
 KG <- read.csv('BRFSS_KG_2017.csv')
 KG$Word.Count <- as.integer(KG$Word.Count)
-#KG$Confidence <- (1 - as.numeric(KG$P.Value))
-#KG$WCC <- KG$Word.Count * KG$Confidence 
+
 KG_AGG <- aggregate(KG$Word.Count, by=list(Column.A=KG$Column.A), FUN=sum)
 
-#state_data[1] <- (state_data[1]) * (KG_AGG$x[KG_AGG$Column.A == 1])
-#state_data[2] <- (state_data[2]) * (KG_AGG$x[KG_AGG$Column.A == 2])
-#state_data[3] <- (state_data[3]) * (KG_AGG$x[KG_AGG$Column.A == 3])
-#state_data[4] <- (state_data[4]) * (KG_AGG$x[KG_AGG$Column.A == 4])
-#state_data[5] <- (state_data[5]) * (KG_AGG$x[KG_AGG$Column.A == 5])
-#state_data[6] <- (state_data[6]) * (KG_AGG$x[KG_AGG$Column.A == 6])
-#state_data[7] <- (state_data[7]) * (KG_AGG$x[KG_AGG$Column.A == 7])
-#state_data[8] <- (state_data[8]) * (KG_AGG$x[KG_AGG$Column.A == 8])
-#state_data[9] <- (state_data[9]) * (KG_AGG$x[KG_AGG$Column.A == 9])
-#state_data[10] <- (state_data[10]) * (KG_AGG$x[KG_AGG$Column.A == 10])
-#state_data[11] <- (state_data[11]) * (KG_AGG$x[KG_AGG$Column.A == 11])
-#state_data[12] <- (state_data[12]) * (KG_AGG$x[KG_AGG$Column.A == 12])
-#state_data[13] <- (state_data[13]) * (KG_AGG$x[KG_AGG$Column.A == 13])
-#state_data[14] <- (state_data[14]) * (KG_AGG$x[KG_AGG$Column.A == 14])
-#state_data[15] <- (state_data[15]) * (KG_AGG$x[KG_AGG$Column.A == 15])
-#state_data[16] <- (state_data[16]) * (KG_AGG$x[KG_AGG$Column.A == 16])
-#state_data[17] <- (state_data[17]) * (KG_AGG$x[KG_AGG$Column.A == 17])
-#state_data[18] <- (state_data[18]) * (KG_AGG$x[KG_AGG$Column.A == 18])
-#state_data[19] <- (state_data[19]) * (KG_AGG$x[KG_AGG$Column.A == 19])
-#state_data[20] <- (state_data[20]) * (KG_AGG$x[KG_AGG$Column.A == 20])
-#state_data[21] <- (state_data[21]) * (KG_AGG$x[KG_AGG$Column.A == 21])
-#state_data[22] <- (state_data[22]) * (KG_AGG$x[KG_AGG$Column.A == 22])
-#state_data[23] <- (state_data[23]) * (KG_AGG$x[KG_AGG$Column.A == 23])
-#state_data[24] <- (state_data[24]) * (KG_AGG$x[KG_AGG$Column.A == 24])
-#state_data[25] <- (state_data[25]) * (KG_AGG$x[KG_AGG$Column.A == 25])
-#state_data[26] <- (state_data[26]) * (KG_AGG$x[KG_AGG$Column.A == 26])
-#state_data[27] <- (state_data[27]) * (KG_AGG$x[KG_AGG$Column.A == 27])
-#state_data[28] <- (state_data[28]) * (KG_AGG$x[KG_AGG$Column.A == 28])
-#state_data[29] <- (state_data[29]) * (KG_AGG$x[KG_AGG$Column.A == 29])
-#state_data[30] <- (state_data[30]) * (KG_AGG$x[KG_AGG$Column.A == 30])
-#state_data[31] <- (state_data[31]) * (KG_AGG$x[KG_AGG$Column.A == 31])
-#state_data[32] <- (state_data[32]) * (KG_AGG$x[KG_AGG$Column.A == 32])
-#state_data[33] <- (state_data[33]) * (KG_AGG$x[KG_AGG$Column.A == 33])
-#state_data[34] <- (state_data[34]) * (KG_AGG$x[KG_AGG$Column.A == 34])
-#state_data[35] <- (state_data[35]) * (KG_AGG$x[KG_AGG$Column.A == 35])
-#state_data[36] <- (state_data[36]) * (KG_AGG$x[KG_AGG$Column.A == 36])
-#state_data[37] <- (state_data[37]) * (KG_AGG$x[KG_AGG$Column.A == 37])
-#state_data[38] <- (state_data[38]) * (KG_AGG$x[KG_AGG$Column.A == 38])
-#state_data[39] <- (state_data[39]) * (KG_AGG$x[KG_AGG$Column.A == 39])
-#state_data[30] <- (state_data[30]) * (KG_AGG$x[KG_AGG$Column.A == 40])
-#state_data[41] <- (state_data[41]) * (KG_AGG$x[KG_AGG$Column.A == 41])
-#state_data[42] <- (state_data[42]) * (KG_AGG$x[KG_AGG$Column.A == 42])
-#state_data[43] <- (state_data[43]) * (KG_AGG$x[KG_AGG$Column.A == 43])
-#state_data[44] <- (state_data[44]) * (KG_AGG$x[KG_AGG$Column.A == 44])
-#state_data[45] <- (state_data[45]) * (KG_AGG$x[KG_AGG$Column.A == 45])
-#state_data[46] <- (state_data[46]) * (KG_AGG$x[KG_AGG$Column.A == 46])
-#state_data[47] <- (state_data[47]) * (KG_AGG$x[KG_AGG$Column.A == 47])
-#state_data[48] <- (state_data[48]) * (KG_AGG$x[KG_AGG$Column.A == 48])
-#state_data[49] <- (state_data[49]) * (KG_AGG$x[KG_AGG$Column.A == 49])
-#state_data[50] <- (state_data[50]) * (KG_AGG$x[KG_AGG$Column.A == 50])
-#state_data[51] <- (state_data[51]) * (KG_AGG$x[KG_AGG$Column.A == 51])
-#state_data[52] <- (state_data[52]) * (KG_AGG$x[KG_AGG$Column.A == 52])
-#state_data[53] <- (state_data[53]) * (KG_AGG$x[KG_AGG$Column.A == 53])
-#state_data[54] <- (state_data[54]) * (KG_AGG$x[KG_AGG$Column.A == 54])
-#state_data[55] <- (state_data[55]) * (KG_AGG$x[KG_AGG$Column.A == 55])
-#state_data[56] <- (state_data[56]) * (KG_AGG$x[KG_AGG$Column.A == 56])
-#state_data[57] <- (state_data[57]) * (KG_AGG$x[KG_AGG$Column.A == 57])
-#state_data[58] <- (state_data[58]) * (KG_AGG$x[KG_AGG$Column.A == 58])
-#state_data[59] <- (state_data[59]) * (KG_AGG$x[KG_AGG$Column.A == 59])
-#state_data[60] <- (state_data[60]) * (KG_AGG$x[KG_AGG$Column.A == 60])
-#state_data[61] <- (state_data[61]) * (KG_AGG$x[KG_AGG$Column.A == 61])
-#state_data[62] <- (state_data[62]) * (KG_AGG$x[KG_AGG$Column.A == 62])
-#state_data[63] <- (state_data[63]) * (KG_AGG$x[KG_AGG$Column.A == 63])
-#state_data[64] <- (state_data[64]) * (KG_AGG$x[KG_AGG$Column.A == 64])
-#state_data[65] <- (state_data[65]) * (KG_AGG$x[KG_AGG$Column.A == 65])
-#state_data[66] <- (state_data[66]) * (KG_AGG$x[KG_AGG$Column.A == 66])
-#state_data[67] <- (state_data[67]) * (KG_AGG$x[KG_AGG$Column.A == 67])
-#state_data[68] <- (state_data[68]) * (KG_AGG$x[KG_AGG$Column.A == 68])
-#state_data[69] <- (state_data[69]) * (KG_AGG$x[KG_AGG$Column.A == 69])
-#state_data[70] <- (state_data[70]) * (KG_AGG$x[KG_AGG$Column.A == 70])
-#state_data[71] <- (state_data[71]) * (KG_AGG$x[KG_AGG$Column.A == 71])
-#state_data[72] <- (state_data[72]) * (KG_AGG$x[KG_AGG$Column.A == 72])
-#state_data[73] <- (state_data[73]) * (KG_AGG$x[KG_AGG$Column.A == 73])
-#state_data[74] <- (state_data[74]) * (KG_AGG$x[KG_AGG$Column.A == 74])
-#state_data[75] <- (state_data[75]) * (KG_AGG$x[KG_AGG$Column.A == 75])
-#state_data[76] <- (state_data[76]) * (KG_AGG$x[KG_AGG$Column.A == 76])
-#state_data[77] <- (state_data[77]) * (KG_AGG$x[KG_AGG$Column.A == 77])
-#state_data[78] <- (state_data[78]) * (KG_AGG$x[KG_AGG$Column.A == 78])
-#state_data[79] <- (state_data[79]) * (KG_AGG$x[KG_AGG$Column.A == 79])
-#state_data[80] <- (state_data[80]) * (KG_AGG$x[KG_AGG$Column.A == 80])
-#state_data[81] <- (state_data[81]) * (KG_AGG$x[KG_AGG$Column.A == 81])
-#state_data[82] <- (state_data[82]) * (KG_AGG$x[KG_AGG$Column.A == 82])
-#state_data[83] <- (state_data[83]) * (KG_AGG$x[KG_AGG$Column.A == 83])
-#state_data[84] <- (state_data[84]) * (KG_AGG$x[KG_AGG$Column.A == 84])
-#state_data[85] <- (state_data[85]) * (KG_AGG$x[KG_AGG$Column.A == 85])
-#state_data[86] <- (state_data[86]) * (KG_AGG$x[KG_AGG$Column.A == 86])
-#state_data[87] <- (state_data[87]) * (KG_AGG$x[KG_AGG$Column.A == 87])
-#state_data[88] <- (state_data[88]) * (KG_AGG$x[KG_AGG$Column.A == 88])
-#state_data[89] <- (state_data[89]) * (KG_AGG$x[KG_AGG$Column.A == 89])
-#state_data[90] <- (state_data[90]) * (KG_AGG$x[KG_AGG$Column.A == 90])
-#state_data[91] <- (state_data[91]) * (KG_AGG$x[KG_AGG$Column.A == 91])
-#state_data[92] <- (state_data[92]) * (KG_AGG$x[KG_AGG$Column.A == 92])
-#state_data[93] <- (state_data[93]) * (KG_AGG$x[KG_AGG$Column.A == 93])
-#state_data[94] <- (state_data[94]) * (KG_AGG$x[KG_AGG$Column.A == 94])
-#state_data[95] <- (state_data[95]) * (KG_AGG$x[KG_AGG$Column.A == 95])
-#state_data[96] <- (state_data[96]) * (KG_AGG$x[KG_AGG$Column.A == 96])
-#state_data[97] <- (state_data[97]) * (KG_AGG$x[KG_AGG$Column.A == 97])
-#state_data[98] <- (state_data[98]) * (KG_AGG$x[KG_AGG$Column.A == 98])
-#state_data[99] <- (state_data[99]) * (KG_AGG$x[KG_AGG$Column.A == 99])
-#state_data[100] <- (state_data[100]) * (KG_AGG$x[KG_AGG$Column.A == 100])
-#state_data[101] <- (state_data[101]) * (KG_AGG$x[KG_AGG$Column.A == 101])
-#state_data[102] <- (state_data[102]) * (KG_AGG$x[KG_AGG$Column.A == 102])
-#state_data[103] <- (state_data[103]) * (KG_AGG$x[KG_AGG$Column.A == 103])
-#state_data[104] <- (state_data[104]) * (KG_AGG$x[KG_AGG$Column.A == 104])
-#state_data[105] <- (state_data[105]) * (KG_AGG$x[KG_AGG$Column.A == 105])
-#state_data[106] <- (state_data[106]) * (KG_AGG$x[KG_AGG$Column.A == 106])
-#state_data[107] <- (state_data[107]) * (KG_AGG$x[KG_AGG$Column.A == 107])
-#state_data[108] <- (state_data[108]) * (KG_AGG$x[KG_AGG$Column.A == 108])
-#state_data[109] <- (state_data[109]) * (KG_AGG$x[KG_AGG$Column.A == 109])
-#state_data[110] <- (state_data[110]) * (KG_AGG$x[KG_AGG$Column.A == 110])
-#state_data[111] <- (state_data[111]) * (KG_AGG$x[KG_AGG$Column.A == 111])
-#state_data[112] <- (state_data[112]) * (KG_AGG$x[KG_AGG$Column.A == 112])
-#state_data[113] <- (state_data[113]) * (KG_AGG$x[KG_AGG$Column.A == 113])
-#state_data[114] <- (state_data[114]) * (KG_AGG$x[KG_AGG$Column.A == 114])
-#state_data[115] <- (state_data[115]) * (KG_AGG$x[KG_AGG$Column.A == 115])
-#state_data[116] <- (state_data[116]) * (KG_AGG$x[KG_AGG$Column.A == 116])
-#state_data[117] <- (state_data[117]) * (KG_AGG$x[KG_AGG$Column.A == 117])
-#state_data[118] <- (state_data[118]) * (KG_AGG$x[KG_AGG$Column.A == 118])
-#state_data[119] <- (state_data[119]) * (KG_AGG$x[KG_AGG$Column.A == 119])
-#state_data[120] <- (state_data[120]) * (KG_AGG$x[KG_AGG$Column.A == 120])
-#state_data[121] <- (state_data[121]) * (KG_AGG$x[KG_AGG$Column.A == 121])
-#state_data[122] <- (state_data[122]) * (KG_AGG$x[KG_AGG$Column.A == 122])
-#state_data[123] <- (state_data[123]) * (KG_AGG$x[KG_AGG$Column.A == 123])
-#state_data[124] <- (state_data[124]) * (KG_AGG$x[KG_AGG$Column.A == 124])
-#state_data[125] <- (state_data[125]) * (KG_AGG$x[KG_AGG$Column.A == 125])
-#state_data[126] <- (state_data[126]) * (KG_AGG$x[KG_AGG$Column.A == 126])
-#state_data[127] <- (state_data[127]) * (KG_AGG$x[KG_AGG$Column.A == 127])
-#state_data[128] <- (state_data[128]) * (KG_AGG$x[KG_AGG$Column.A == 128])
-#state_data[129] <- (state_data[129]) * (KG_AGG$x[KG_AGG$Column.A == 129])
-#state_data[130] <- (state_data[130]) * (KG_AGG$x[KG_AGG$Column.A == 130])
-#state_data[131] <- (state_data[131]) * (KG_AGG$x[KG_AGG$Column.A == 131])
-#state_data[132] <- (state_data[132]) * (KG_AGG$x[KG_AGG$Column.A == 132])
-#state_data[133] <- (state_data[133]) * (KG_AGG$x[KG_AGG$Column.A == 133])
-#state_data[134] <- (state_data[134]) * (KG_AGG$x[KG_AGG$Column.A == 134])
-#state_data[135] <- (state_data[135]) * (KG_AGG$x[KG_AGG$Column.A == 135])
-#state_data[136] <- (state_data[136]) * (KG_AGG$x[KG_AGG$Column.A == 136])
-#state_data[137] <- (state_data[137]) * (KG_AGG$x[KG_AGG$Column.A == 137])
-#state_data[138] <- (state_data[138]) * (KG_AGG$x[KG_AGG$Column.A == 138])
-#state_data[139] <- (state_data[139]) * (KG_AGG$x[KG_AGG$Column.A == 139])
-#state_data[130] <- (state_data[130]) * (KG_AGG$x[KG_AGG$Column.A == 140])
-#state_data[141] <- (state_data[141]) * (KG_AGG$x[KG_AGG$Column.A == 141])
-#state_data[142] <- (state_data[142]) * (KG_AGG$x[KG_AGG$Column.A == 142])
-#state_data[143] <- (state_data[143]) * (KG_AGG$x[KG_AGG$Column.A == 143])
-#state_data[144] <- (state_data[144]) * (KG_AGG$x[KG_AGG$Column.A == 144])
-#state_data[145] <- (state_data[145]) * (KG_AGG$x[KG_AGG$Column.A == 145])
-#state_data[146] <- (state_data[146]) * (KG_AGG$x[KG_AGG$Column.A == 146])
-#state_data[147] <- (state_data[147]) * (KG_AGG$x[KG_AGG$Column.A == 147])
-#state_data[148] <- (state_data[148]) * (KG_AGG$x[KG_AGG$Column.A == 148])
-#state_data[149] <- (state_data[149]) * (KG_AGG$x[KG_AGG$Column.A == 149])
-#state_data[150] <- (state_data[150]) * (KG_AGG$x[KG_AGG$Column.A == 150])
-#state_data[151] <- (state_data[151]) * (KG_AGG$x[KG_AGG$Column.A == 151])
-#state_data[152] <- (state_data[152]) * (KG_AGG$x[KG_AGG$Column.A == 152])
-#state_data[153] <- (state_data[153]) * (KG_AGG$x[KG_AGG$Column.A == 153])
-#state_data[154] <- (state_data[154]) * (KG_AGG$x[KG_AGG$Column.A == 154])
-#state_data[155] <- (state_data[155]) * (KG_AGG$x[KG_AGG$Column.A == 155])
-#state_data[156] <- (state_data[156]) * (KG_AGG$x[KG_AGG$Column.A == 156])
-#state_data[157] <- (state_data[157]) * (KG_AGG$x[KG_AGG$Column.A == 157])
-#state_data[158] <- (state_data[158]) * (KG_AGG$x[KG_AGG$Column.A == 158])
-#state_data[159] <- (state_data[159]) * (KG_AGG$x[KG_AGG$Column.A == 159])
-#state_data[160] <- (state_data[160]) * (KG_AGG$x[KG_AGG$Column.A == 160])
-#state_data[161] <- (state_data[161]) * (KG_AGG$x[KG_AGG$Column.A == 161])
-#state_data[162] <- (state_data[162]) * (KG_AGG$x[KG_AGG$Column.A == 162])
-#state_data[163] <- (state_data[163]) * (KG_AGG$x[KG_AGG$Column.A == 163])
-#state_data[164] <- (state_data[164]) * (KG_AGG$x[KG_AGG$Column.A == 164])
-#state_data[165] <- (state_data[165]) * (KG_AGG$x[KG_AGG$Column.A == 165])
-#state_data[166] <- (state_data[166]) * (KG_AGG$x[KG_AGG$Column.A == 166])
-#state_data[167] <- (state_data[167]) * (KG_AGG$x[KG_AGG$Column.A == 167])
-#state_data[168] <- (state_data[168]) * (KG_AGG$x[KG_AGG$Column.A == 168])
-#state_data[169] <- (state_data[169]) * (KG_AGG$x[KG_AGG$Column.A == 169])
-#state_data[170] <- (state_data[170]) * (KG_AGG$x[KG_AGG$Column.A == 170])
-#state_data[171] <- (state_data[171]) * (KG_AGG$x[KG_AGG$Column.A == 171])
-#state_data[172] <- (state_data[172]) * (KG_AGG$x[KG_AGG$Column.A == 172])
-#state_data[173] <- (state_data[173]) * (KG_AGG$x[KG_AGG$Column.A == 173])
-#state_data[174] <- (state_data[174]) * (KG_AGG$x[KG_AGG$Column.A == 174])
-#state_data[175] <- (state_data[175]) * (KG_AGG$x[KG_AGG$Column.A == 175])
-#state_data[176] <- (state_data[176]) * (KG_AGG$x[KG_AGG$Column.A == 176])
-#state_data[177] <- (state_data[177]) * (KG_AGG$x[KG_AGG$Column.A == 177])
-#state_data[178] <- (state_data[178]) * (KG_AGG$x[KG_AGG$Column.A == 178])
-#state_data[179] <- (state_data[179]) * (KG_AGG$x[KG_AGG$Column.A == 179])
-#state_data[180] <- (state_data[180]) * (KG_AGG$x[KG_AGG$Column.A == 180])
-#state_data[181] <- (state_data[181]) * (KG_AGG$x[KG_AGG$Column.A == 181])
-#state_data[182] <- (state_data[182]) * (KG_AGG$x[KG_AGG$Column.A == 182])
-#state_data[183] <- (state_data[183]) * (KG_AGG$x[KG_AGG$Column.A == 183])
-#state_data[184] <- (state_data[184]) * (KG_AGG$x[KG_AGG$Column.A == 184])
-#state_data[185] <- (state_data[185]) * (KG_AGG$x[KG_AGG$Column.A == 185])
-#state_data[186] <- (state_data[186]) * (KG_AGG$x[KG_AGG$Column.A == 186])
-#state_data[187] <- (state_data[187]) * (KG_AGG$x[KG_AGG$Column.A == 187])
-#state_data[188] <- (state_data[188]) * (KG_AGG$x[KG_AGG$Column.A == 188])
-#state_data[189] <- (state_data[189]) * (KG_AGG$x[KG_AGG$Column.A == 189])
-#state_data[190] <- (state_data[190]) * (KG_AGG$x[KG_AGG$Column.A == 190])
-#state_data[191] <- (state_data[191]) * (KG_AGG$x[KG_AGG$Column.A == 191])
-#state_data[192] <- (state_data[192]) * (KG_AGG$x[KG_AGG$Column.A == 192])
-#state_data[193] <- (state_data[193]) * (KG_AGG$x[KG_AGG$Column.A == 193])
-#state_data[194] <- (state_data[194]) * (KG_AGG$x[KG_AGG$Column.A == 194])
-#state_data[195] <- (state_data[195]) * (KG_AGG$x[KG_AGG$Column.A == 195])
-#state_data[196] <- (state_data[196]) * (KG_AGG$x[KG_AGG$Column.A == 196])
-#state_data[197] <- (state_data[197]) * (KG_AGG$x[KG_AGG$Column.A == 197])
-#state_data[198] <- (state_data[198]) * (KG_AGG$x[KG_AGG$Column.A == 198])
-#state_data[199] <- (state_data[199]) * (KG_AGG$x[KG_AGG$Column.A == 199])
-#state_data[200] <- (state_data[200]) * (KG_AGG$x[KG_AGG$Column.A == 200])
-#state_data[201] <- (state_data[201]) * (KG_AGG$x[KG_AGG$Column.A == 201])
-#state_data[202] <- (state_data[202]) * (KG_AGG$x[KG_AGG$Column.A == 202])
-#state_data[203] <- (state_data[203]) * (KG_AGG$x[KG_AGG$Column.A == 203])
-#state_data[204] <- (state_data[204]) * (KG_AGG$x[KG_AGG$Column.A == 204])
-#state_data[205] <- (state_data[205]) * (KG_AGG$x[KG_AGG$Column.A == 205])
-#state_data[206] <- (state_data[206]) * (KG_AGG$x[KG_AGG$Column.A == 206])
-#state_data[207] <- (state_data[207]) * (KG_AGG$x[KG_AGG$Column.A == 207])
-#state_data[208] <- (state_data[208]) * (KG_AGG$x[KG_AGG$Column.A == 208])
-#state_data[209] <- (state_data[209]) * (KG_AGG$x[KG_AGG$Column.A == 209])
-#state_data[210] <- (state_data[210]) * (KG_AGG$x[KG_AGG$Column.A == 210])
-#state_data[211] <- (state_data[211]) * (KG_AGG$x[KG_AGG$Column.A == 211])
-#state_data[212] <- (state_data[212]) * (KG_AGG$x[KG_AGG$Column.A == 212])
-#state_data[213] <- (state_data[213]) * (KG_AGG$x[KG_AGG$Column.A == 213])
-#state_data[214] <- (state_data[214]) * (KG_AGG$x[KG_AGG$Column.A == 214])
-#state_data[215] <- (state_data[215]) * (KG_AGG$x[KG_AGG$Column.A == 215])
-#state_data[216] <- (state_data[216]) * (KG_AGG$x[KG_AGG$Column.A == 216])
-#state_data[217] <- (state_data[217]) * (KG_AGG$x[KG_AGG$Column.A == 217])
-#state_data[218] <- (state_data[218]) * (KG_AGG$x[KG_AGG$Column.A == 218])
-#state_data[219] <- (state_data[219]) * (KG_AGG$x[KG_AGG$Column.A == 219])
-#state_data[220] <- (state_data[220]) * (KG_AGG$x[KG_AGG$Column.A == 220])
-#state_data[221] <- (state_data[221]) * (KG_AGG$x[KG_AGG$Column.A == 221])
-#state_data[222] <- (state_data[222]) * (KG_AGG$x[KG_AGG$Column.A == 222])
-#state_data[223] <- (state_data[223]) * (KG_AGG$x[KG_AGG$Column.A == 223])
-#state_data[224] <- (state_data[224]) * (KG_AGG$x[KG_AGG$Column.A == 224])
-#state_data[225] <- (state_data[225]) * (KG_AGG$x[KG_AGG$Column.A == 225])
-#state_data[226] <- (state_data[226]) * (KG_AGG$x[KG_AGG$Column.A == 226])
-#state_data[227] <- (state_data[227]) * (KG_AGG$x[KG_AGG$Column.A == 227])
-#state_data[228] <- (state_data[228]) * (KG_AGG$x[KG_AGG$Column.A == 228])
-#state_data[229] <- (state_data[229]) * (KG_AGG$x[KG_AGG$Column.A == 229])
-#state_data[230] <- (state_data[230]) * (KG_AGG$x[KG_AGG$Column.A == 230])
-#state_data[231] <- (state_data[231]) * (KG_AGG$x[KG_AGG$Column.A == 231])
-#state_data[232] <- (state_data[232]) * (KG_AGG$x[KG_AGG$Column.A == 232])
-#state_data[233] <- (state_data[233]) * (KG_AGG$x[KG_AGG$Column.A == 233])
-#state_data[234] <- (state_data[234]) * (KG_AGG$x[KG_AGG$Column.A == 234])
-#state_data[235] <- (state_data[235]) * (KG_AGG$x[KG_AGG$Column.A == 235])
-#state_data[236] <- (state_data[236]) * (KG_AGG$x[KG_AGG$Column.A == 236])
-#state_data[237] <- (state_data[237]) * (KG_AGG$x[KG_AGG$Column.A == 237])
-#state_data[238] <- (state_data[238]) * (KG_AGG$x[KG_AGG$Column.A == 238])
-#state_data[239] <- (state_data[239]) * (KG_AGG$x[KG_AGG$Column.A == 239])
-#state_data[240] <- (state_data[240]) * (KG_AGG$x[KG_AGG$Column.A == 240])
 
 
-#state_data[3] <- (state_data[3]) * 0
-#state_data[60] <- (state_data[60]) * 0
-#state_data[94] <- (state_data[94]) * 0
-#state_data[100] <- (state_data[100]) * 0
-#state_data[172] <- (state_data[172]) * 0
-#state_data[192] <- (state_data[192]) * 0
-#state_data[203] <- (state_data[203]) * 0
-#state_data[212] <- (state_data[212]) * 0
-#state_data[235] <- (state_data[235]) * 0
-#
-#write.csv(state_data, "LLCP2020XPT_Grounded_MissingFix_KG.csv")
 
-#data_missing50 <- state_data[ -c(10,11,12,13,14,15,16,17,18,19,20,21,28,47,55,61,62,68,78,79,80,83,84,85,87,91,93,95,97,99,101,102,103,104,105,106,108,110,112,114,116,118,122,123,124,125,126,127,128,129,130,131,132,133,134,135,136,137,138,139,140,141,142,143,144,145,146,147,148,149,150,151,152,153,154,155,157,158,159,160,161,162,163,164,165,166,168,169,170,171,172,173,174,175,176,177,178,179,180,181,182,183,184,185,186,188,189,190,191,192,193,194,195,196,197,198,199,200,201,202,207,214,215,216,218,232,262,263,267,268,269,270,271,272,273,274,275,276,277,278) ]
-#
-#write.csv(na.omit(data_missing50), "LLCP2020XPT_Grounded_ML_Nona_KG.csv")
+fifty_percent <- nrow(state_data)/2
+na_count <- sapply(state_data, function(x) sum(is.na(x)))
+na_50 <- na_count[na_count > fifty_percent]
+list_na_count <- as.list(na_count[na_count > fifty_percent])
+df_na_count <- as.data.frame(list_na_count)
+extract_columns <- colnames(df_na_count)
+extract_col_numbers <- which( colnames(state_data) %in% extract_columns )
 
-#state_data[54][state_data[54] == 1] <- 1 
-#state_data[54][state_data[54] == 2] <- 1
-#state_data[54][state_data[54] == 3] <- 0
-#state_data[54][state_data[54] == 4] <- 0
-#state_data[54][state_data[54] == 7] <- 0
-#state_data[54][state_data[54] == 9] <- 0
-#state_data[54][is.na(state_data[54])] <- 0
-#state_data[167][is.na(state_data[167])] <- 0
-#state_data[167][state_data[167] >= 1] <- 0
-
-
-#fifty_percent <- nrow(state_data)/2
-#na_count <- sapply(state_data, function(x) sum(is.na(x)))
-#na_50 <- na_count[na_count > fifty_percent]
-#list_na_count <- as.list(na_count[na_count > fifty_percent])
-#df_na_count <- as.data.frame(list_na_count)
-#extract_columns <- colnames(df_na_count)
-#extract_col_numbers <- which( colnames(state_data) %in% extract_columns )
-#
-#ml_missing50 <- state_data[ -c(extract_col_numbers) ]
-#
-##ml_missing50 <- state_data[ -c(10,11,12,13,14,15,16,17,18,19,20,21,28,47,55,61,62,68,78,79,80,83,84,85,87,91,93,95,97,99,101,102,103,104,105,106,108,110,112,114,116,118,122,123,124,125,126,127,128,129,130,131,132,133,134,135,136,137,138,139,140,141,142,143,144,145,146,147,148,149,150,151,152,153,154,155,157,158,159,160,161,162,163,164,165,166,168,169,170,171,172,173,174,175,176,177,178,179,180,181,182,183,184,185,186,188,189,190,191,192,193,194,195,196,197,198,199,200,201,202,207,214,215,216,218,232,262,263,267,268,269,270,271,272,273,274,275,276,277,278) ]
-##ml_missing50_2 <- state_data[ -c(DLYOTHER, NOCOV121) ]
-#
-#drop <- c("DLYOTHER", "NOCOV121")
-#ml_missing50_2 = ml_missing50[,!(names(ml_missing50) %in% drop)]
-#
-#ml_missing50_nona <- na.omit(ml_missing50_2)
-#write.csv(ml_missing50_nona, "LLCP2018XPT_Grounded_ML_nona.csv")
 
 
 KG_AGG_na_omit <- na.omit(KG_AGG)
@@ -1511,17 +1235,9 @@ KG_FS25 <- KG_AGG_na_omit[KG_AGG_na_omit$x > quantile(KG_AGG_na_omit$x,prob=1-n/
 fs_list <- sort(as.numeric(KG_FS25$Column.A))
 fs_list
 
-#KG_AGG_na_omit <- na.omit(KG_AGG)
-#n <- 50
-#KG_FS50 <- KG_AGG_na_omit[KG_AGG_na_omit$x > quantile(KG_AGG_na_omit$x,prob=1-n/100),]
-#fs_list <- sort(as.numeric(KG_FS50$Column.A))
-#fs_list
 
-# [1]   8  18  22  24  26  35  36  37  40  42  45  46  53  55  56  58  61  63  69  73  78  80  90  92  97  99 105 106 122 123 125 131 132 137 138 139 141 144 147 149 151 152 162 165 172 177 179 181 184 190 194 196
-#[53] 198 204 205 208 209 211 212 217 222 225 235 251 255 261 262 269
 
-`%!in%` <- Negate(`%in%`)
-#final_list <- fs_list[fs_list %!in% c(10,11,12,13,14,15,16,17,18,19,20,21,28,47,55,61,62,68,78,79,80,83,84,85,87,91,93,95,97,99,101,102,103,104,105,106,108,110,112,114,116,118,122,123,124,125,126,127,128,129,130,131,132,133,134,135,136,137,138,139,140,141,142,143,144,145,146,147,148,149,150,151,152,153,154,155,157,158,159,160,161,162,163,164,165,166,168,169,170,171,172,173,174,175,176,177,178,179,180,181,182,183,184,185,186,188,189,190,191,192,193,194,195,196,197,198,199,200,201,202,207,214,215,216,218,232,262,263,267,268,269,270,271,272,273,274,275,276,277,278)]
+n%` <- Negate(`%in%`)
 
 final_list <- fs_list[fs_list %!in% c(extract_col_numbers)]
 
@@ -1529,7 +1245,6 @@ final_list <- append(final_list, 52)
 final_list <- append(final_list, 185)
 
 
-#feature_selection <- state_data[ c(8,22,24,26,35,36,37,40,42,45,46,53,56,58,63,69,73,90,92,204,205,208,209,211,212,217,222,225,235,251,255,261,54,167) ] 
 feature_selection <- state_data[ c(final_list) ] 
 write.csv(na.omit(feature_selection), "LLCP2017XPT_Grounded_KGFS25.csv")
 
@@ -1550,3 +1265,38 @@ final_list <- append(final_list, 185)
 
 feature_selection <- state_data[ c(final_list) ] 
 write.csv(na.omit(feature_selection), "LLCP2017XPT_Grounded_KGFS10.csv")
+
+
+
+KG_AGG_na_omit <- na.omit(KG_AGG)
+n <- 5
+KG_FS10 <- KG_AGG_na_omit[KG_AGG_na_omit$x > quantile(KG_AGG_na_omit$x,prob=1-n/100),]
+fs_list <- sort(as.numeric(KG_FS10$Column.A))
+fs_list
+
+`%!in%` <- Negate(`%in%`)
+
+final_list <- fs_list[fs_list %!in% c(extract_col_numbers)]
+
+final_list <- append(final_list, 52)
+final_list <- append(final_list, 185)
+
+feature_selection <- state_data[ c(final_list) ] 
+write.csv(na.omit(feature_selection), "LLCP2017XPT_Grounded_KGFS5.csv")
+
+
+KG_AGG_na_omit <- na.omit(KG_AGG)
+n <- 50
+KG_FS10 <- KG_AGG_na_omit[KG_AGG_na_omit$x > quantile(KG_AGG_na_omit$x,prob=1-n/100),]
+fs_list <- sort(as.numeric(KG_FS10$Column.A))
+fs_list
+
+`%!in%` <- Negate(`%in%`)
+
+final_list <- fs_list[fs_list %!in% c(extract_col_numbers)]
+
+final_list <- append(final_list, 52)
+final_list <- append(final_list, 185)
+
+feature_selection <- state_data[ c(final_list) ] 
+write.csv(na.omit(feature_selection), "LLCP2017XPT_Grounded_KGFS50.csv")

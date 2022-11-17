@@ -1293,6 +1293,42 @@ write.csv(na.omit(feature_selection), "LLCP2020XPT_Grounded_KGFS25.csv")
 
 
 KG_AGG_na_omit <- na.omit(KG_AGG)
+n <- 20
+KG_FS10 <- KG_AGG_na_omit[KG_AGG_na_omit$x > quantile(KG_AGG_na_omit$x,prob=1-n/100),]
+fs_list <- sort(as.numeric(KG_FS10$Column.A))
+fs_list
+
+
+`%!in%` <- Negate(`%in%`)
+
+final_list <- fs_list[fs_list %!in% c(extract_col_numbers)]
+
+final_list <- append(final_list, 54)
+final_list <- append(final_list, 167)
+
+feature_selection <- state_data[ c(final_list) ] 
+write.csv(na.omit(feature_selection), "LLCP2020XPT_Grounded_KGFS20.csv")
+
+
+KG_AGG_na_omit <- na.omit(KG_AGG)
+n <- 15
+KG_FS10 <- KG_AGG_na_omit[KG_AGG_na_omit$x > quantile(KG_AGG_na_omit$x,prob=1-n/100),]
+fs_list <- sort(as.numeric(KG_FS10$Column.A))
+fs_list
+
+
+`%!in%` <- Negate(`%in%`)
+
+final_list <- fs_list[fs_list %!in% c(extract_col_numbers)]
+
+final_list <- append(final_list, 54)
+final_list <- append(final_list, 167)
+
+feature_selection <- state_data[ c(final_list) ] 
+write.csv(na.omit(feature_selection), "LLCP2020XPT_Grounded_KGFS15.csv")
+
+
+KG_AGG_na_omit <- na.omit(KG_AGG)
 n <- 10
 KG_FS10 <- KG_AGG_na_omit[KG_AGG_na_omit$x > quantile(KG_AGG_na_omit$x,prob=1-n/100),]
 fs_list <- sort(as.numeric(KG_FS10$Column.A))
@@ -1309,3 +1345,38 @@ final_list <- append(final_list, 167)
 feature_selection <- state_data[ c(final_list) ] 
 write.csv(na.omit(feature_selection), "LLCP2020XPT_Grounded_KGFS10.csv")
 
+
+KG_AGG_na_omit <- na.omit(KG_AGG)
+n <- 5
+KG_FS10 <- KG_AGG_na_omit[KG_AGG_na_omit$x > quantile(KG_AGG_na_omit$x,prob=1-n/100),]
+fs_list <- sort(as.numeric(KG_FS10$Column.A))
+fs_list
+
+
+`%!in%` <- Negate(`%in%`)
+
+final_list <- fs_list[fs_list %!in% c(extract_col_numbers)]
+
+final_list <- append(final_list, 54)
+final_list <- append(final_list, 167)
+
+feature_selection <- state_data[ c(final_list) ] 
+write.csv(na.omit(feature_selection), "LLCP2020XPT_Grounded_KGFS5.csv")
+
+
+KG_AGG_na_omit <- na.omit(KG_AGG)
+n <- 50
+KG_FS10 <- KG_AGG_na_omit[KG_AGG_na_omit$x > quantile(KG_AGG_na_omit$x,prob=1-n/100),]
+fs_list <- sort(as.numeric(KG_FS10$Column.A))
+fs_list
+
+
+`%!in%` <- Negate(`%in%`)
+
+final_list <- fs_list[fs_list %!in% c(extract_col_numbers)]
+
+final_list <- append(final_list, 54)
+final_list <- append(final_list, 167)
+
+feature_selection <- state_data[ c(final_list) ] 
+write.csv(na.omit(feature_selection), "LLCP2020XPT_Grounded_KGFS50.csv")
