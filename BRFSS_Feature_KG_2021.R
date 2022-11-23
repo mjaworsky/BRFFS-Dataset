@@ -14,6 +14,7 @@ library(wordcloud2)
 
 setwd('C:/Users/mdjaw/OneDrive/Documents/Markian Training/Research_USQ/WHO_ICD_Codes')
 
+#Select all or any WHO ICD Code Chapters
 WHO_CH_00 <- as.list(readLines("WHO_CH_00_List.txt", encoding = "UTF-8"))
 WHO_CH_01 <- as.list(readLines("WHO_CH_01.txt", encoding = "UTF-8"))
 WHO_CH_02 <- as.list(readLines("WHO_CH_02.txt", encoding = "UTF-8"))
@@ -45,6 +46,7 @@ WHO_CH_26 <- as.list(readLines("WHO_CH_26.txt", encoding = "UTF-8"))
 #WHO_EXT <- as.list(readLines("WHO_EXT.txt", encoding = "UTF-8"))
 #WHO_ICD <- as.list(readLines("WHO_ICD.txt", encoding = "UTF-8"))
 
+#Perform data pre-processing on WHO ICD Codes
 doc_CH_00 <- Corpus(VectorSource(WHO_CH_00))
 doc_CH_00 = tm_map(doc_CH_00, content_transformer(tolower))
 doc_CH_00 = tm_map(doc_CH_00, removePunctuation)
@@ -248,7 +250,7 @@ WHO_CH_26 <- as.list(doc_CH_26$content)
 #WHO_EXT <- doc_EXT$content
 #WHO_EXT <- as.list(doc_EXT$content)
 
-
+#Merge WHO ICD Code chapters in to single dataframe
 df_WHO_00 <- as.data.frame(do.call(rbind, WHO_CH_00))
 df_WHO_01 <- as.data.frame(do.call(rbind, WHO_CH_01))
 df_WHO_02 <- as.data.frame(do.call(rbind, WHO_CH_02))
@@ -280,6 +282,7 @@ df_WHO_26 <- as.data.frame(do.call(rbind, WHO_CH_26))
 #df_WHO_EXT <- as.data.frame(do.call(rbind, WHO_EXT))
 #df_WHO_ICD <- as.data.frame(do.call(rbind, WHO_ICD))
 
+#Set WHO ICD Code chapter titles
 df_WHO_00$Chapter = c("CH_00: List of top level categories")
 df_WHO_01$Chapter = c("CH_01: Certain infectious or parasitic diseases")
 df_WHO_02$Chapter = c("CH_02: Neoplasms")
@@ -355,7 +358,7 @@ WHO_words <- WHO_words %>%
   bind_tf_idf(word, chapter, n)
 WHO_words
 
-
+#Define BRFSS Survey questions as individual text vectors
 Q1 <- tolower(c('Is','this','PHONE','NUMBER'))
 Q2 <- tolower(c('Is','this','a','private','residence'))							
 Q3 <- tolower(c('Do','you','live','in','college','housing'))							
@@ -583,10 +586,9 @@ Q224 <- tolower(c('Which','of','the','following','best','represents','how','you'
 Q225 <- tolower(c('Do','you','consider','yourself','to','be','transgender'))		
 Q226 <- tolower(c('Would','it','be','okay','if','we','called','you','back','to','ask','additional','asthma','related','questions','at','a','later','time'))
 Q227 <- tolower(c('Which','person','in','the','household','was','selected','as','the','focus','of','the','asthma','call','back'))
-Q228 <- tolower(c('Can','I','please','have','either','your','your','child','first','name','or','initials','so','we','will','know','who','to','ask','for','when','we','call','back'))	
+Q228 <- tolower(c('Can','I','please','have','either','your','your','child','first','name','or','initials','so','we','will','know','who','to','ask','for','when','we','call','back'))
 
-
-
+#Merge BRFSS Survey question text vectors with WHO ICD Code Chapters
 WHO_Q1 <- WHO_words %>% filter(word %in% Q1) %>% select(-total) %>% arrange(desc(tf_idf)) 
 WHO_Q2 <- WHO_words %>% filter(word %in% Q2) %>% select(-total) %>% arrange(desc(tf_idf)) 
 WHO_Q3 <- WHO_words %>% filter(word %in% Q3) %>% select(-total) %>% arrange(desc(tf_idf)) 
@@ -816,6 +818,7 @@ WHO_Q226 <- WHO_words %>% filter(word %in% Q226) %>% select(-total) %>% arrange(
 WHO_Q227 <- WHO_words %>% filter(word %in% Q227) %>% select(-total) %>% arrange(desc(tf_idf)) 
 WHO_Q228 <- WHO_words %>% filter(word %in% Q228) %>% select(-total) %>% arrange(desc(tf_idf)) 
 
+#Count and sort BRFSS Survey Question text word frequency per chapter
 WHO_Q1_SORT <- WHO_Q1[order(-WHO_Q1$n),]
 WHO_Q2_SORT <- WHO_Q2[order(-WHO_Q2$n),]
 WHO_Q3_SORT <- WHO_Q3[order(-WHO_Q3$n),]
@@ -1045,7 +1048,7 @@ WHO_Q226_SORT <- WHO_Q226[order(-WHO_Q226$n),]
 WHO_Q227_SORT <- WHO_Q227[order(-WHO_Q227$n),]
 WHO_Q228_SORT <- WHO_Q228[order(-WHO_Q228$n),]
 
-
+#Merge into single dataframe
 WHO_LIST <- list(WHO_Q1_SORT, WHO_Q2_SORT, WHO_Q3_SORT, WHO_Q4_SORT, WHO_Q5_SORT, WHO_Q6_SORT, WHO_Q7_SORT, WHO_Q8_SORT, WHO_Q9_SORT, WHO_Q10_SORT, WHO_Q11_SORT, WHO_Q12_SORT, WHO_Q13_SORT, WHO_Q14_SORT, WHO_Q15_SORT, WHO_Q16_SORT, WHO_Q17_SORT, WHO_Q18_SORT, WHO_Q19_SORT, WHO_Q20_SORT, WHO_Q21_SORT, WHO_Q22_SORT, WHO_Q23_SORT, WHO_Q24_SORT, WHO_Q25_SORT, WHO_Q26_SORT, WHO_Q27_SORT, WHO_Q28_SORT, WHO_Q29_SORT, WHO_Q30_SORT, WHO_Q31_SORT, WHO_Q32_SORT, WHO_Q33_SORT, WHO_Q34_SORT, WHO_Q35_SORT, WHO_Q36_SORT, WHO_Q37_SORT, WHO_Q38_SORT, WHO_Q39_SORT, WHO_Q40_SORT, WHO_Q41_SORT, WHO_Q42_SORT, WHO_Q43_SORT, WHO_Q44_SORT, WHO_Q45_SORT, WHO_Q46_SORT, WHO_Q47_SORT, WHO_Q48_SORT, WHO_Q49_SORT, WHO_Q50_SORT, WHO_Q51_SORT, WHO_Q52_SORT, WHO_Q53_SORT, WHO_Q54_SORT, WHO_Q55_SORT, WHO_Q56_SORT, WHO_Q57_SORT, WHO_Q58_SORT, WHO_Q59_SORT, WHO_Q60_SORT, WHO_Q61_SORT, WHO_Q62_SORT, WHO_Q63_SORT, WHO_Q64_SORT, WHO_Q65_SORT, WHO_Q66_SORT, WHO_Q67_SORT, WHO_Q68_SORT, WHO_Q69_SORT, WHO_Q70_SORT, WHO_Q71_SORT, WHO_Q72_SORT, WHO_Q73_SORT, WHO_Q74_SORT, WHO_Q75_SORT, WHO_Q76_SORT, WHO_Q77_SORT, WHO_Q78_SORT, WHO_Q79_SORT, WHO_Q80_SORT, WHO_Q81_SORT, WHO_Q82_SORT, WHO_Q83_SORT, WHO_Q84_SORT, WHO_Q85_SORT, WHO_Q86_SORT, WHO_Q87_SORT, WHO_Q88_SORT, WHO_Q89_SORT, WHO_Q90_SORT, WHO_Q91_SORT, WHO_Q92_SORT, WHO_Q93_SORT, WHO_Q94_SORT, WHO_Q95_SORT, WHO_Q96_SORT, WHO_Q97_SORT, WHO_Q98_SORT, WHO_Q99_SORT, WHO_Q100_SORT, WHO_Q101_SORT, WHO_Q102_SORT, WHO_Q103_SORT, WHO_Q104_SORT, WHO_Q105_SORT, WHO_Q106_SORT, WHO_Q107_SORT, WHO_Q108_SORT, WHO_Q109_SORT, WHO_Q110_SORT, WHO_Q111_SORT, WHO_Q112_SORT, WHO_Q113_SORT, WHO_Q114_SORT, WHO_Q115_SORT, WHO_Q116_SORT, WHO_Q117_SORT, WHO_Q118_SORT, WHO_Q119_SORT, WHO_Q120_SORT, WHO_Q121_SORT, WHO_Q122_SORT, WHO_Q123_SORT, WHO_Q124_SORT, WHO_Q125_SORT, WHO_Q126_SORT, WHO_Q127_SORT, WHO_Q128_SORT, WHO_Q129_SORT, WHO_Q130_SORT, WHO_Q131_SORT, WHO_Q132_SORT, WHO_Q133_SORT, WHO_Q134_SORT, WHO_Q135_SORT, WHO_Q136_SORT, WHO_Q137_SORT, WHO_Q138_SORT, WHO_Q139_SORT, WHO_Q140_SORT, WHO_Q141_SORT, WHO_Q142_SORT, WHO_Q143_SORT, WHO_Q144_SORT, WHO_Q145_SORT, WHO_Q146_SORT, WHO_Q147_SORT, WHO_Q148_SORT, WHO_Q149_SORT, WHO_Q150_SORT, WHO_Q151_SORT, WHO_Q152_SORT, WHO_Q153_SORT, WHO_Q154_SORT, WHO_Q155_SORT, WHO_Q156_SORT, WHO_Q157_SORT, WHO_Q158_SORT, WHO_Q159_SORT, WHO_Q160_SORT, WHO_Q161_SORT, WHO_Q162_SORT, WHO_Q163_SORT, WHO_Q164_SORT, WHO_Q165_SORT, WHO_Q166_SORT, WHO_Q167_SORT, WHO_Q168_SORT, WHO_Q169_SORT, WHO_Q170_SORT, WHO_Q171_SORT, WHO_Q172_SORT, WHO_Q173_SORT, WHO_Q174_SORT, WHO_Q175_SORT, WHO_Q176_SORT, WHO_Q177_SORT, WHO_Q178_SORT, WHO_Q179_SORT, WHO_Q180_SORT, WHO_Q181_SORT, WHO_Q182_SORT, WHO_Q183_SORT, WHO_Q184_SORT, WHO_Q185_SORT, WHO_Q186_SORT, WHO_Q187_SORT, WHO_Q188_SORT, WHO_Q189_SORT, WHO_Q190_SORT, WHO_Q191_SORT, WHO_Q192_SORT, WHO_Q193_SORT, WHO_Q194_SORT, WHO_Q195_SORT, WHO_Q196_SORT, WHO_Q197_SORT, WHO_Q198_SORT, WHO_Q199_SORT, WHO_Q200_SORT, WHO_Q201_SORT, WHO_Q202_SORT, WHO_Q203_SORT, WHO_Q204_SORT, WHO_Q205_SORT, WHO_Q206_SORT, WHO_Q207_SORT, WHO_Q208_SORT, WHO_Q209_SORT, WHO_Q210_SORT, WHO_Q211_SORT, WHO_Q212_SORT, WHO_Q213_SORT, WHO_Q214_SORT, WHO_Q215_SORT, WHO_Q216_SORT, WHO_Q217_SORT, WHO_Q218_SORT, WHO_Q219_SORT, WHO_Q220_SORT, WHO_Q221_SORT, WHO_Q222_SORT, WHO_Q223_SORT, WHO_Q224_SORT, WHO_Q225_SORT, WHO_Q226_SORT, WHO_Q227_SORT, WHO_Q228_SORT)
 
 
@@ -1083,13 +1086,14 @@ WHO_LIST <- list(WHO_Q1_SORT, WHO_Q2_SORT, WHO_Q3_SORT, WHO_Q4_SORT, WHO_Q5_SORT
 
 
 
-
+#load the BRFSS survey into memory, apply geograhpical state filter
 setwd('C:\\Users\\mdjaw\\OneDrive\\Documents\\Markian Training\\Research_USQ\\USCenterDiseaseControlPrevention\\LLCP2021XPT')
 data <- read.csv('LLCP2021XPT.csv')
 state_data <- subset(data, X_STATE == 4 | X_STATE == 9 | X_STATE == 10 | X_STATE == 13 | X_STATE == 15 | X_STATE == 18 | X_STATE == 22 | X_STATE == 25 | X_STATE == 26 | X_STATE == 28 | X_STATE == 29 | X_STATE == 30 | X_STATE == 34 | X_STATE == 35 | X_STATE == 37 | X_STATE == 44 | X_STATE == 46 | X_STATE == 49 | X_STATE == 50 | X_STATE == 51 | X_STATE == 55 | X_STATE == 56 | X_STATE == 66 | X_STATE == 31 | X_STATE == 16 | X_STATE == 19 | X_STATE == 2 | X_STATE == 31 | X_STATE == 1 | X_STATE == 40 | X_STATE == 39) 
 
 which( colnames(state_data)=="CNCRTYP1" )
 
+#convert diabetes and cancer types into a multi-label response variable
 state_data[57][state_data[57] == 1] <- 1 
 state_data[57][state_data[57] == 2] <- 1
 state_data[57][state_data[57] == 3] <- 0
@@ -1100,7 +1104,7 @@ state_data[57][is.na(state_data[57])] <- 0
 state_data[158][is.na(state_data[158])] <- 0
 state_data[158][state_data[158] >= 1] <- 1
 
-
+#load knowledge graph into memory
 setwd('C:/Users/mdjaw/OneDrive/Documents/Markian Training/Research_USQ/USCenterDiseaseControlPrevention/LLCP2021XPT')
 KG <- read.csv('BRFSS_KG_2021.csv')
 KG$Word.Count <- as.integer(KG$Word.Count)
@@ -1109,7 +1113,7 @@ KG$Confidence <- (1 - as.numeric(KG$P.Value))
 KG_AGG <- aggregate(KG$Word.Count, by=list(Column.A=KG$Column.A), FUN=sum)
 
 
-
+#remove features with more than 50 percent of values missing
 fifty_percent <- nrow(state_data)/2
 na_count <- sapply(state_data, function(x) sum(is.na(x)))
 na_50 <- na_count[na_count > fifty_percent]
@@ -1126,6 +1130,8 @@ ml_missing50_nona <- append(ml_missing50_nona, 158)
 
 write.csv(ml_missing50_nona, "LLCP2021XPT_Grounded_ML_nona.csv")
 
+
+#select top 25% of available features
 KG_AGG_na_omit <- na.omit(KG_AGG)
 n <- 25
 KG_FS25 <- KG_AGG_na_omit[KG_AGG_na_omit$x > quantile(KG_AGG_na_omit$x,prob=1-n/100),]
@@ -1143,6 +1149,7 @@ feature_selection <- state_data[ c(final_list) ]
 write.csv(na.omit(feature_selection), "LLCP2021XPT_Grounded_KGFS25.csv")
 
 
+#select top 20% of available features
 KG_AGG_na_omit <- na.omit(KG_AGG)
 n <- 20
 KG_FS10 <- KG_AGG_na_omit[KG_AGG_na_omit$x > quantile(KG_AGG_na_omit$x,prob=1-n/100),]
@@ -1161,6 +1168,7 @@ feature_selection <- state_data[ c(final_list) ]
 write.csv(na.omit(feature_selection), "LLCP2021XPT_Grounded_KGFS20.csv")
 
 
+#select top 15% of available features
 KG_AGG_na_omit <- na.omit(KG_AGG)
 n <- 15
 KG_FS10 <- KG_AGG_na_omit[KG_AGG_na_omit$x > quantile(KG_AGG_na_omit$x,prob=1-n/100),]
@@ -1179,6 +1187,7 @@ feature_selection <- state_data[ c(final_list) ]
 write.csv(na.omit(feature_selection), "LLCP2021XPT_Grounded_KGFS15.csv")
 
 
+#select top 10% of available features
 KG_AGG_na_omit <- na.omit(KG_AGG)
 n <- 10
 KG_FS10 <- KG_AGG_na_omit[KG_AGG_na_omit$x > quantile(KG_AGG_na_omit$x,prob=1-n/100),]
@@ -1198,6 +1207,7 @@ write.csv(na.omit(feature_selection), "LLCP2021XPT_Grounded_KGFS10.csv")
 #grep("B", colnames(df))
 
 
+#select top 5% of available features
 KG_AGG_na_omit <- na.omit(KG_AGG)
 n <- 5
 KG_FS10 <- KG_AGG_na_omit[KG_AGG_na_omit$x > quantile(KG_AGG_na_omit$x,prob=1-n/100),]
@@ -1216,6 +1226,7 @@ feature_selection <- state_data[ c(final_list) ]
 write.csv(na.omit(feature_selection), "LLCP2021XPT_Grounded_KGFS5.csv")
 
 
+#select top 50% of available features
 KG_AGG_na_omit <- na.omit(KG_AGG)
 n <- 50
 KG_FS10 <- KG_AGG_na_omit[KG_AGG_na_omit$x > quantile(KG_AGG_na_omit$x,prob=1-n/100),]
@@ -1234,19 +1245,3 @@ feature_selection <- state_data[ c(final_list) ]
 write.csv(na.omit(feature_selection), "LLCP2021XPT_Grounded_KGFS50.csv")
 
 
-KG_AGG_na_omit <- na.omit(KG_AGG)
-n <- 80
-KG_FS10 <- KG_AGG_na_omit[KG_AGG_na_omit$x > quantile(KG_AGG_na_omit$x,prob=1-n/100),]
-fs_list <- sort(as.numeric(KG_FS10$Column.A))
-fs_list
-
-
-`%!in%` <- Negate(`%in%`)
-
-final_list <- fs_list[fs_list %!in% c(extract_col_numbers)]
-
-final_list <- append(final_list, 57)
-final_list <- append(final_list, 158)
-
-feature_selection <- state_data[ c(final_list) ] 
-write.csv(na.omit(feature_selection), "LLCP2021XPT_Grounded_KGFS80.csv")
